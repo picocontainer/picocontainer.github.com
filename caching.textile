@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: pico
 name: Caching and Singleton
 ---
 
@@ -11,7 +11,29 @@ p.
 
 p. Choose your style for caching behavior:
 
-pico = new DefaultPicoContainer(new Caching()); pico.addComponent(Apple.class); Apple a1 = pico.getComponent(Apple.class); Apple a2 = pico.getComponent(Apple.class); // both the same instancepico = new DefaultPicoContainer(); pico.as(CACHE).addComponent(Apple.class); Apple a1 = pico.getComponent(Apple.class); Apple a2 = pico.getComponent(Apple.class); // both the same instancepico = new PicoBuilder().withCaching().build(); pico.addComponent(Apple.class); Apple a1 = pico.getComponent(Apple.class); Apple a2 = pico.getComponent(Apple.class); // both the same instanceimport static org.picocontainer.behaviors.Behaviors.caching; ... pico = new PicoBuilder().withBehaviors(caching()).build(); pico.addComponent(Apple.class); Apple a1 = pico.getComponent(Apple.class); Apple a2 = pico.getComponent(Apple.class); // both the same instanceh3. Opt in Caching
+{% highlight java %}
+qqq
+pico = new DefaultPicoContainer(new Caching()); 
+pico.addComponent(Apple.class); 
+Apple a1 = pico.getComponent(Apple.class); 
+Apple a2 = pico.getComponent(Apple.class); // both the same instance
+
+pico = new DefaultPicoContainer(); 
+pico.as(CACHE).addComponent(Apple.class); 
+Apple a1 = pico.getComponent(Apple.class); 
+Apple a2 = pico.getComponent(Apple.class); // both the same instance
+
+pico = new PicoBuilder().withCaching().build(); 
+pico.addComponent(Apple.class); 
+Apple a1 = pico.getComponent(Apple.class); 
+Apple a2 = pico.getComponent(Apple.class); // both the same instance
+
+import static org.picocontainer.behaviors.Behaviors.caching; 
+... 
+pico = new PicoBuilder().withBehaviors(caching()).build(); 
+pico.addComponent(Apple.class); 
+Apple a1 = pico.getComponent(Apple.class); 
+Apple a2 = pico.getComponent(Apple.class); // both the same instance{% endhighlight %}
 
 p. This is caching as above, but only when that property is set.
 

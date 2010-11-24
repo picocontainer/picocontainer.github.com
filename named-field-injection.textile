@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: pico
 title: Named Field Injection
 ---
 
