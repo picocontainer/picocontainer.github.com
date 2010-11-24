@@ -1,4 +1,9 @@
-Newsp.  *Jun 30, 2010 - PicoContainer 2.11.1 released (316K jar)* 
+---
+layout: default
+name: News
+---
+
+p.  *Jun 30, 2010 - PicoContainer 2.11.1 released (316K jar)* 
 
 p. Changes (versus 2.11):
 

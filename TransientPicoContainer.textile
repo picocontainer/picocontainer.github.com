@@ -1,4 +1,9 @@
-TransientPicoContainerp. TransientPicoContainer is a for short term needs for object instantiation, where the container is going to be de-referenced shortly after use.
+---
+layout: default
+name: TransientPicoContainer
+---
+
+p. TransientPicoContainer is a for short term needs for object instantiation, where the container is going to be de-referenced shortly after use.
 
 p. Here is an example of use:
 

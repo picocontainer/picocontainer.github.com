@@ -1,4 +1,9 @@
-Javadoch3. PicoContainer Core
+---
+layout: default
+name: Javadoc
+---
+
+h3. PicoContainer Core
 
 p.  "PicoContainer Core":javadoc/core/index.html contains the fundamental functionality of PicoContainer
 

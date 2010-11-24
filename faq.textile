@@ -1,4 +1,9 @@
-FAQh3. Why PicoContainer 2.0?
+---
+layout: default
+name: FAQs
+---
+
+h3. Why PicoContainer 2.0?
 
 p. First EJB 3.0 then Google's Guice seemed to copy the ideas from PicoContainer. EJB 3.0 invented the annotated types of injection, but crazily ommitted the Constructor Injection support, and Guice too the annotation idea and went far to further sith it. Soon after Guice, even the Spring Framework team decided to do things the direct way with their 'JavaConfig' capability.
 

@@ -1,4 +1,9 @@
-Hiding Implementationsh2. Hiding and Swapping of Implementations
+---
+layout: default
+name: Hiding Implementations
+---
+
+h2. Hiding and Swapping of Implementations
 
 h3. Implementation Hiding %(subheading)(Located in PicoContainer Gems)% 
 

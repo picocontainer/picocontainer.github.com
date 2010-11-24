@@ -1,4 +1,10 @@
-Class Namingp. PicoContainer's class naming changed substantially between 1.0 and 2.0. There are two major influences for this:
+---
+layout: default
+name: Class Naming
+---
+
+
+p. PicoContainer's class naming changed substantially between 1.0 and 2.0. There are two major influences for this:
 
 # Dan North's"Behavior Driven Design"agenda and his interest in Neuro Linguistic Programming (NLP)
 # Steve Yegge's technical fable : "Execution in the Kingdom of Nouns":http://steve-yegge.blogspot.com/2006/03/execution-in-kingdom-of-nouns.html 

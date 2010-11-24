@@ -1,4 +1,9 @@
-Project Goalsp. PicoContainer's core was designed with some goals in mind:
+---
+layout: default
+name: Project Goals
+---
+
+p. PicoContainer's core was designed with some goals in mind:
 
 * No mandatory dependencies.
 * No mandatory implements/extends/import for component makers.

@@ -1,4 +1,8 @@
-PropertiesPicoContainerp. PropertiesPicoContainer is a special type of PicoContainer that is populated from the entries in a properties file.
+---
+layout: default
+name: PropertiesPicoContainer
+---
+p. PropertiesPicoContainer is a special type of PicoContainer that is populated from the entries in a properties file.
 
 p. Here is an example of how to use PropertiesPicoContainer to map properties as configuration for a component, with parameter names as the bindings.
 

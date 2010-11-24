@@ -1,4 +1,9 @@
-Component Lifecyclep. Inversion of Control is three things: component dependencies and configuration, but also Component Lifecycle.
+---
+layout: default
+name: Component Lifecycle
+---
+
+p. Inversion of Control is three things: component dependencies and configuration, but also Component Lifecycle.
 
 p. After instantiation, if the component warrants it, a 'start' stage may be required. More specifically, if a container has injected and instantiated all components in a set, one or more of them may require starting in the same order they were instantiated. Later, in reverse order, the same component(s) may require stopping. In fact start and stop may happen more than one for the life of an application. Disposal may happen once only, before the component is eligible for garbage collection.
 

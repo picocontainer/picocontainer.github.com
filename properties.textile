@@ -1,4 +1,9 @@
-Component Propertiesp. DefaultPicoContainer allows for some properties to be set per component at the time each is added. A convenience class called Characteristics lists the supplied properties.
+---
+layout: default
+name: Component Properties
+---
+
+p. DefaultPicoContainer allows for some properties to be set per component at the time each is added. A convenience class called Characteristics lists the supplied properties.
 
 p. Properties can be set for a component in a method 'as' on MutablePicoContainer. If that is the case then the properties will affect the *next* component added only.
 

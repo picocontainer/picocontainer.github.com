@@ -1,4 +1,9 @@
-Method Injectionh3. Overview
+---
+layout: default
+name: Method Injection
+---
+
+h3. Overview
 
 p. This is where a component has an empty constructor and gets %{font-weight: bold;}all% its dependencies injected into single method after instantiation:
 

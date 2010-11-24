@@ -1,4 +1,9 @@
-Factory Injectionh3. Overview
+---
+layout: default
+name: Factory Injection
+---
+
+h3. Overview
 
 p. This allows an instance to be injected via a factory that is aware of the thing it is injecting into and can make a custom instance just for that injectee. This type of injection is only possible if you add an Adapter for it directly that subclasses *FactoryInjection<T>* 
 

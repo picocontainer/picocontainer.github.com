@@ -1,4 +1,9 @@
-Multiple Injectionh3. Overview
+---
+layout: default
+name: Multiple Injection
+---
+
+h3. Overview
 
 p. This is where a component has is a blend of one or more of Constructor, Setter, Method, Annotated Field etc:
 

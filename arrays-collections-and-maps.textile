@@ -1,4 +1,9 @@
-Arrays, Collections and Mapsp. Authors: Aslak Hellesøy and Jörg Schaible
+---
+layout: default
+name: Arrays, Collections and Maps
+---
+
+p. Authors: Aslak Hellesøy and Jörg Schaible
 
 h2. Supported Collective Types
 

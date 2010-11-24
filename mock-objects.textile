@@ -1,4 +1,9 @@
-Mock Objectsp. If you have had it with codebases that drag along everything and the kitchen sink, (possibly using the "Singleton":singleton-antipattern.html ) you must read this page. Classes that look up or instantiate heavyweight classes themselves are such beasts. As you might have experienced, they are a pain to test. (And ample proof that the authors didn't follow TDD !/images/thumbs_down.gif! ). Dependency Injection with PicoContainer and Mock Objects to the rescue!
+---
+layout: default
+name: Mock Objects
+---
+
+p. If you have had it with codebases that drag along everything and the kitchen sink, (possibly using the "Singleton":singleton-antipattern.html ) you must read this page. Classes that look up or instantiate heavyweight classes themselves are such beasts. As you might have experienced, they are a pain to test. (And ample proof that the authors didn't follow TDD !/images/thumbs_down.gif! ). Dependency Injection with PicoContainer and Mock Objects to the rescue!
 
 p. Mock Objects are special objects used during testing. Mock Objects and classes that honour "Constructor Injection":injection.html are a *perfect match* , since such classes can be handed mocks during testing and"the real thing"when the application is run.
 

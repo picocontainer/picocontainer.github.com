@@ -1,4 +1,9 @@
-Downloadsh3. Released Binary and Source Jars (1.x and 2.x)
+---
+layout: default
+name: Downloads
+---
+
+h3. Released Binary and Source Jars (1.x and 2.x)
 
 p. Core: "http://repository.codehaus.org/org/picocontainer/picocontainer/":http://repository.codehaus.org/org/picocontainer/picocontainer/ 
 

@@ -1,4 +1,9 @@
-Named Method Injectionh3. Overview
+---
+layout: default
+name: Named Method Injection
+---
+
+h3. Overview
 
 p. This is where a component has an empty constructor with dependencies passed in via setters and matching done via the method name (after 'set'). Matches are against named components.
 

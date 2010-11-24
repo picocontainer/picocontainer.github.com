@@ -1,4 +1,9 @@
-Convertersh2. Overview
+---
+layout: default
+name: Converters
+---
+
+h2. Overview
 
 p.  %{font-weight: normal;}Converters take string instances in PicoContainer and convert the type that a particular component requires for injection.% DefaultPicoContainer has built in converter %{font-weight: normal;}for primitives:% 
 

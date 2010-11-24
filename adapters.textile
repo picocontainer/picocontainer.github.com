@@ -1,4 +1,9 @@
-Component Adaptersh3. What Are "ComponentAdapters":http://www.picocontainer.org/javadoc/core/org/picocontainer/ComponentAdapter.html and why are they useful?
+---
+layout: default
+name: Component Adapters
+---
+
+h3. What Are "ComponentAdapters":http://www.picocontainer.org/javadoc/core/org/picocontainer/ComponentAdapter.html and why are they useful?
 
 p. ComponentAdapters are probably PicoContainer's most highly misunderstood (and coincidentally, most powerful) feature. They combine the power of an object factory, and an object interceptor rolled into one.
 

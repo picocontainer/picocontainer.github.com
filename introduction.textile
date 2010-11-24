@@ -1,4 +1,9 @@
-Introductionp. Authors: Aslak Hellesoy, Jon Tirsen
+---
+layout: default
+name: Introduction
+---
+
+p. Authors: Aslak Hellesoy, Jon Tirsen
 
 h2. Basics
 

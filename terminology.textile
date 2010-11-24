@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>Terminologyp. Also known as Picosaurus
+---
+layout: default
+name: Terminology
+---
+
+p. Also known as Picosaurus
 
 h2. Overview
 

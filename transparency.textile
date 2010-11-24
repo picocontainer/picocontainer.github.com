@@ -1,4 +1,9 @@
-Transparencyp. Transparency, for PicoContainer, means that components do not have to implement any interface or abstraction in order to be components. Moreover, components do not have to adhere to any naming conventions or bundle any meta-data in order to qualify as components.
+---
+layout: default
+name: Transparency
+---
+
+p. Transparency, for PicoContainer, means that components do not have to implement any interface or abstraction in order to be components. Moreover, components do not have to adhere to any naming conventions or bundle any meta-data in order to qualify as components.
 
 p. Constructor Injection is what we recommend, so the minimum definition of a component is a simple class that takes its dependencies in its constructor. For Setter Injection, it is a class with dependencies delivered via simple setters. Your components may be interface / implementation separated, but we are not forcing that for when using PicoContainer.
 

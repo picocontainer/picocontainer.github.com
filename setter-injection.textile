@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>Setter Injectionh2. Overview
+---
+layout: default
+name: Setter Injection
+---
+
+h2. Overview
 
 p. Setter Injection is where the container or embedder hands dependencies to a component via setter methods after instantiation.
 

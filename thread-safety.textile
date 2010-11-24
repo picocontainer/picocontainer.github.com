@@ -1,4 +1,10 @@
-Thread Safety Behaviorsh2. Thread Safety
+---
+layout: default
+name: Thread Safety Behaviors
+---
+
+
+h2. Thread Safety
 
 p. When components are created by two threads concurrently, with the intention of the instance being cached, it is possible in a small percentage of cases for the first instance into the cache to be replaced with a second instance. To prevent this, you may want to try one of two behaviors to make the operation thread safe.
 

@@ -1,4 +1,9 @@
-Other Behaviorsh3. Property Applying
+---
+layout: default
+name: Other Behaviors
+---
+
+h3. Property Applying
 
 p. This is where there are a number of setters for a component that will be could be set after instantiation. A way of handing in some configuration if you like.
 

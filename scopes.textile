@@ -1,4 +1,9 @@
-Scoped Containersp. PicoContainer's scope hinges on parent/child container relationships. From a PicoContainer instance you can make a child container via makeChildContainer() or addChildContainer(..).
+---
+layout: default
+name: Scoped Containers
+---
+
+p. PicoContainer's scope hinges on parent/child container relationships. From a PicoContainer instance you can make a child container via makeChildContainer() or addChildContainer(..).
 
 p. These hierarchies of container can be set up with parents and children refering to each other, or children referring to parents only, or parents referring to children only. This changes the way that things work considerably. If a child has its parent registered, then it can lean on it for component resolution (but not without). If a parent has its child registered asa child, then it can manage it (start, stop, dispose cascade into children).
 

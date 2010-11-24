@@ -1,4 +1,9 @@
-Fluent Stylep. PicoContainer allows for a very fluent style of use. Refer to Martin's "'Fluent Interface'":http://www.martinfowler.com/bliki/FluentInterface.html article.
+---
+layout: default
+name: Fluent Style
+---
+
+p. PicoContainer allows for a very fluent style of use. Refer to Martin's "'Fluent Interface'":http://www.martinfowler.com/bliki/FluentInterface.html article.
 
 p. A simple example :
 

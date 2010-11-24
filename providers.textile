@@ -1,4 +1,9 @@
-Injection via Providersp. A Provider class is a class with a method named provide that can participate in injection
+---
+layout: default
+name: Injection via Providers
+---
+
+p. A Provider class is a class with a method named provide that can participate in injection
 
 p. Consider the following example of a provider:
 

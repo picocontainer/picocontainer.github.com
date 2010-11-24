@@ -1,4 +1,9 @@
-Composite Injectionh3. Overview
+---
+layout: default
+name: Composite Injection
+---
+
+h3. Overview
 
 p. This is also where a component has is a blend of one or more of Constructor, Setter, Method, Annotated Field. The difference is that you know precisely what your injection design is and want to tune specifically for that, or you are some way off the defaults supported by *MultiInjection* 
 

@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>Container Comparisonsh2. Overview
+---
+layout: default
+name: Container Comparisons
+---
+
+h2. Overview
 
 p. This document aims to compare PicoContainer to other IoC containers, both lightweight and not.
 

@@ -1,4 +1,9 @@
-DefaultPicoContainerp. DefaultPicoContainer is the main workhorse container.
+---
+layout: default
+name: DefaultPicoContainer
+---
+
+p. DefaultPicoContainer is the main workhorse container.
 
 p. Here is an example of use:
 

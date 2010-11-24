@@ -1,4 +1,9 @@
-Monitoring Component Eventsp. A ComponentMonitor if injected into DefultPicoContainer allows for certain events to be monitored for the whole container. These are:
+---
+layout: default
+name: Monitoring Component Events
+---
+
+p. A ComponentMonitor if injected into DefultPicoContainer allows for certain events to be monitored for the whole container. These are:
 
 * instantiating - referring to a component
 * instantiated - referring to a component

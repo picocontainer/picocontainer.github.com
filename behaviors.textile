@@ -1,4 +1,9 @@
-Behaviors Overviewp. PicoContainer can add behaviors to components automatically during instantiation.
+---
+layout: default
+name: Behaviors Overview
+---
+
+p. PicoContainer can add behaviors to components automatically during instantiation.
 
 p. Behaviors are delivered by passing a BehaviorFactory reference into the PicoContainer instance on construction. For the most part BehaviorFactories are completely stateless, and the Behavior instances they make are not.
 

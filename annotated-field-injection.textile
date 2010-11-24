@@ -1,4 +1,9 @@
-Annotated Field Injectionh3. Injecting into Annotated Fields
+---
+layout: default
+name: Annotated Field Injection
+---
+
+h3. Injecting into Annotated Fields
 
 p. This is where a component has an empty constructor with dependencies indicated by a field annotation and provided automatically by the container after instantiation.
 

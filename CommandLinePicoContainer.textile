@@ -1,4 +1,9 @@
-CommandLinePicoContainerp. CommandLineArgumentsPicoContainer is a special type of PicoContainer that processes the arguments passed into from the command line, and sets them up as configuration for other components.
+---
+layout: default
+name: CommandLinePicoContainer
+---
+
+p. CommandLineArgumentsPicoContainer is a special type of PicoContainer that processes the arguments passed into from the command line, and sets them up as configuration for other components.
 
 p. Here is an example of how to use CommandLineArgumentsPicoContainer to map command line arguments as configuration for a component, with parameter names as the bindings.
 

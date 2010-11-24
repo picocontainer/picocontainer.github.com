@@ -1,4 +1,9 @@
-Building Containersp. Rather than new up a PicoContainer instance with the right ComponentFactory, LifecycleStategy and ComponentMonitor, your can use PicoBuilder for conveniece. Refer to Martin Fowler's "'Fluent Interface'":http://www.martinfowler.com/bliki/FluentInterface.html article, for some of the motivation behing this class.
+---
+layout: default
+name: Building Containers
+---
+
+p. Rather than new up a PicoContainer instance with the right ComponentFactory, LifecycleStategy and ComponentMonitor, your can use PicoBuilder for conveniece. Refer to Martin Fowler's "'Fluent Interface'":http://www.martinfowler.com/bliki/FluentInterface.html article, for some of the motivation behing this class.
 
 p. Some simple examples :
 

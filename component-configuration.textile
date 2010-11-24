@@ -1,4 +1,9 @@
-Component Configurationh2. Choices
+---
+layout: default
+name: Component Configuration
+---
+
+h2. Choices
 
 p. In true IoC style, configuration for a component is pushed into it.
 

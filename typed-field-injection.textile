@@ -1,4 +1,9 @@
-Typed Field Injectionh3. Overview
+---
+layout: default
+name: Typed Field Injection
+---
+
+h3. Overview
 
 p. This is where a component has an empty constructor with dependencies indicated by a on a per component basis with an array of field-types to be injected into. These will be provided automatically by the container after instantiation.
 

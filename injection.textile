@@ -1,4 +1,9 @@
-Dependency Injectionp. See Martin Fowlers's "Inversion of Control Containers and the Dependency Injection patten":http://www.martinfowler.com/articles/injection.html article from 2003 for a thorough description. Surely everyone has read this by now?
+---
+layout: default
+name: Dependency Injection
+---
+
+p. See Martin Fowlers's "Inversion of Control Containers and the Dependency Injection patten":http://www.martinfowler.com/articles/injection.html article from 2003 for a thorough description. Surely everyone has read this by now?
 
 p. Very quickly: Dependency Injection is where components are given their dependencies through their constructors, methods, or directly into fields. Those components do not get their dependencies themselves, or instantiate them directly. This is very much related to the encompassing design principle "Inversion of Control":inversion-of-control.html .
 

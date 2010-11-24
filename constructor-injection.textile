@@ -1,4 +1,9 @@
-Constructor Injectionh2. Overview
+---
+layout: default
+name: Constructor Injection
+---
+
+h2. Overview
 
 p. Constructor Injection is a "Dependency Injection":injection.html variant where a component gets all its dependencies via its constructor.
 

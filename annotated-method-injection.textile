@@ -1,4 +1,9 @@
-Annotated Method Injectionh3. Overview
+---
+layout: default
+name: Annotated Method Injection
+---
+
+h3. Overview
 
 p. This is where a component has an empty constructor and gets its dependencies injected into annotated methods after instantiation:
 

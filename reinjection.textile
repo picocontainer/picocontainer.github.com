@@ -1,4 +1,9 @@
-Reinjectionp. Reinjection is where an existing instance, that may have been already created by PicoContainer, can have a method called to inject more dependancies.
+---
+layout: default
+name: Reinjection
+---
+
+p. Reinjection is where an existing instance, that may have been already created by PicoContainer, can have a method called to inject more dependancies.
 
 h2. Direct Reinjection via 'Reinjector'
 

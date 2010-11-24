@@ -1,4 +1,9 @@
-Disambiguationh2. What is Disambiguation?
+---
+layout: default
+name: Disambiguation
+---
+
+h2. What is Disambiguation?
 
 During your first foray into PicoContainer land, you might encounter an _AmbiguousComponentResolutionException_ like this:org.picocontainer.injectors ".AbstractInjector$AmbiguousComponentResolutionExceptio":http://www.picocontainer.org/javadoc/core/org/picocontainer/injectors/AbstractInjector.AmbiguousComponentResolutionException.html n: class<Something Here>needs a '<Something Here>' injected, but there are too many choices to inject. These:[class<Something Here>, class<Something Here>], refer http://picocontainer.org/ambiguous-injectable-help.html at org.picocontainer.parameters.BasicComponentParameter.getTargetAdapter(BasicComponentParameter.java:270) at org.picocontainer.parameters.BasicComponentParameter.resolveAdapter(BasicComponentParameter.java:205) at org.picocontainer.parameters.BasicComponentParameter.isResolvable(BasicComponentParameter.java:136) at org.picocontainer.parameters.ComponentParameter.isResolvable(ComponentParameter.java:132) at org.picocontainer.injectors.ConstructorInjector.getGreediestSatisfiableConstructor(ConstructorInjector.java:105) at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:155) at org.picocontainer.injectors.AbstractInjector$ThreadLocalCyclicDependencyGuard.observe(AbstractInjector.java:262) at org.picocontainer.injectors.ConstructorInjector.getComponentInstance(ConstructorInjector.java:192) at org.picocontainer.injectors.AbstractInjector.getComponentInstance(AbstractInjector.java:103) at org.picocontainer.DefaultPicoContainer.getInstance(DefaultPicoContainer.java:559) at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:526) at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:538)p. Or possibly a _CyclicDependencyException_ like this:
 

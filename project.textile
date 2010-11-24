@@ -1,4 +1,9 @@
-Projectp. PicoContainer is hosted at "Codehaus":http://codehaus.org meaning it has a Xircles "management page":http://xircles.codehaus.org/projects/picocontainer .
+---
+layout: default
+name: Project
+---
+
+p. PicoContainer is hosted at "Codehaus":http://codehaus.org meaning it has a Xircles "management page":http://xircles.codehaus.org/projects/picocontainer .
 
 h2. Project links
 
