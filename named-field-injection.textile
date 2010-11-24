@@ -1,6 +1,6 @@
 ---
 layout: default
-title:Named Field Injection
+title: Named Field Injection
 ---
 
 h2. Overview
