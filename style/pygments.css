@@ -1,3 +1,9 @@
+div.highlight {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee
+  }
+
 .c { color: #008800; font-style: italic } /* Comment */
 .err { border: 1px solid #FF0000 } /* Error */
 .k { color: #AA22FF; font-weight: bold } /* Keyword */
