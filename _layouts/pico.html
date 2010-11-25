@@ -51,31 +51,4 @@
 </div>
 
 </body>
-
-<!--  Scripts to highlight code:  MUST be left AFTER the body -->
-<script language="javascript" src="./js/shCore.js">
-	//
-</script>
-<script language="javascript" src="./js/shBrushJava.js">
-	//
-</script>
-<script language="javascript" src="./js/shBrushXml.js">
-	//
-</script>
-<script type="text/javascript">
-	// <![CDATA[
-	var elements = document.getElementsByClassName('source');
-	elements.each( function(element) {
-		var content = element.getElementsByTagName('pre')[0].innerHTML;
-		var classType = /^&lt;/.test(content) ? "xml" : "java";
-		content = "<textarea name=\"code\" class=\"" + classType + "\">"
-				+ content + "</textarea>";
-		new Insertion.Before(element, content);
-		element.remove(element);
-	});
-
-	dp.SyntaxHighlighter.HighlightAll('code', false, false);
-	// ]]>
-</script>
-
 </html>
