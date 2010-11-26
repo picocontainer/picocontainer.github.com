@@ -4,28 +4,86 @@ name: Coding projects
 ---
 
 <ol class="listProjects">
-<!-- 3 news items -->
-{% for post in site.posts reversed limit:3 %}
-    {% cycle '<li class="left">', '<li>', '<li class="right">' %}
-    <a href="{{ post.url }}/" title="More on {{ post.name }} {{ post.period }}">
-  	<span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
-  	<em>{{ post.language | downcase }}</em>
-  	<img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
-  	<span class="desc">{{post.desc}} (<span class="more">more&hellip;</span>)
+
+  <li class="left">
+    <a href="introduction.html" title="More on Introduction">
+  	<span class="header">Introduction</span>
+  	<em>dependency injection, containers</em>
+  	<img src="/images/introduction_home.png" alt="page screenshot" />
+  	<span class="desc">Dependency Injection introduced to those that don't know what it is, as well as the concepts of containers (<span class="more">more&hellip;</span>)
   	</span>
     </a>
   </li>
-{% endfor %}
-<!-- 6 highlighted sections -->
-{% for post in site.categories.front_page limit:6 %}
-    {% cycle '<li class="left">', '<li>', '<li class="right">' %}
+
+{% for post in site.posts reversed limit:2 %}
+    {% cycle '<li>', '<li class="right">' %}
     <a href="{{ post.url }}/" title="More on {{ post.name }} {{ post.period }}">
-  	<span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
-  	<em>{{ post.language | downcase }}</em>
-  	<img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
-  	<span class="desc">{{post.desc}} (<span class="more">more&hellip;</span>)
-  	</span>
+       <span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
+       <em>{{ post.language | downcase }}</em>
+       <img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
+       <span class="desc">{{post.desc}} (<span class="more">more&hellip;</span>)
     </a>
   </li>
 {% endfor %}
+
+    <li class="left">
+    <a href="http://martinfowler.com/articles/injection.html" title="Martin's article">
+  	<span class="header">Martin Fowler on DI"</span>
+  	<em>dependency injection, martin fowler</em>
+  	<img src="/images/fowler_home.png" alt="page screenshot" />
+  	<span class="desc">Martin Fowler wrote the canonical article on Dependency Injection (<span class="more">more&hellip;</span>)
+  	</span>
+    </a>
+  </li>
+
+    <li>
+    <a href="lifecycle.html" title="More on lifecycle">
+  	<span class="header">Lifecycle concepts</span>
+  	<em>starting/stopping containers</em>
+  	<img src="/images/lifecycle_home.png" alt="page screenshot" />
+  	<span class="desc">DI containers can apply lifecycle events to the components they hold (<span class="more">more&hellip;</span>)
+  	</span>
+    </a>
+  </li>
+
+    <li class="right">
+    <a href="injection.html" title="Deeper dive into injection">
+  	<span class="header">Deeper dive into injection</span>
+  	<em>dependency injection</em>
+  	<img src="/images/injection_home.png" alt="page screenshot" />
+  	<span class="desc">A thorough Dependency Injection explanation (<span class="more">more&hellip;</span>)
+  	</span>
+    </a>
+  </li>
+
+    <li class="left">
+    <a href="scopes.html" title="Scoped Containers ">
+  	<span class="header">Scoped Containers</span>
+  	<em>parent containers, child containers</em>
+  	<img src="/images/scopes_home.png" alt="page screenshot" />
+  	<span class="desc">Containers can have parent/child containers at different <stong>scopes</strong> (<span class="more">more&hellip;</span>)
+  	</span>
+    </a>
+  </li>
+
+    <li>
+    <a href="behaviors.html" title="Modifying Behaviors">
+  	<span class="header">Modifying Behaviors</span>
+  	<em>caching, implementation hiding, etc</em>
+  	<img src="/images/behaviors_home.png" alt="page screenshot" />
+  	<span class="desc">Containers can modify the behaviors of components directly, or as seen by other components in a directed graph of components (<span class="more">more&hellip;</span>)
+  	</span>
+    </a>
+  </li>
+
+    <li class="right">
+    <a href="/inversion-of-control.html" title="Inversion of Control">
+  	<span class="header">Inversion of Control</span>
+  	<em>IoC</em>
+  	<img src="/images/inversion-of-control_home.png" alt="page screenshot" />
+  	<span class="desc">Inversion of Control (IoC) is the concept that gave birth to Dependency Injection, and should be understood by developers using DI containers (<span class="more">more&hellip;</span>)
+  	</span>
+    </a>
+  </li>
+
 </ol>
