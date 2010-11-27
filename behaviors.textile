@@ -11,15 +11,57 @@ h3. General use
 
 p. DefaultPicoContainer can take a behavior factory instance in its constructor:
 
-pico = new DefaultPicoContainer(new BehaviorClass()); pico.addComponent(Foo.class); // other components added Foo foo = pico.getcomponent(Foo.class) // Foo instance will be affected by an additonal behavior.p. Or it can take behaviours that wrap each other:
+{% highlight java %}
+pico = new DefaultPicoContainer(new BehaviorClass());
+pico.addComponent(Foo.class); 
+// other components added 
+Foo foo = pico.getcomponent(Foo.class) // Foo instance will be affected by an additional behavior.
+{% endhighlight %}
 
-pico = new DefaultPicoContainer(new BehaviorClass().wrap(new AnotherBehaviorClass()));pico.addComponent(Foo.class); // other components added Foo foo = pico.getcomponent(Foo.class) // Foo instance will be affected by two additonal behaviors.p. Behaviors can be signalled by properties per component:
+p. Or it can take behaviors that wrap each other:
 
-pico = new DefaultPicoContainer(); pico.as(SOME_BEHAVIOR).addComponent(Foo.class); // the behavior has a property marking it, and the default component facory understands that property // other components added Foo foo = pico.getcomponent(Foo.class) // Foo instance will be affected by an additonal behavior.p. You can build a container with the applicable property:
+{% highlight java %}
+pico = new DefaultPicoContainer(new BehaviorClass().wrap(new AnotherBehaviorClass()));
+pico.addComponent(Foo.class); 
+// other components added 
+Foo foo = pico.getcomponent(Foo.class) // Foo instance will be affected by two additional behaviors.
+{% endhighlight %}
 
-pico = new PicoBuilder().withXXXBehavior().build(); pico.addComponent(Foo.class); // other components added Foo foo = pico.getcomponent(Foo.class) // Foo instance will be affected by an additonal behavior.p. Behaviors can be chained together by PicoBuilder:
+p. Behaviors can be signaled by properties per component:
 
-import static org.picocontainer.behaviors.Behaviors.xxxxxxx; import static org.picocontainer.behaviors.Behaviors.yyyyyyy; ... pico = new PicoBuilder().withBehaviors(xxxxxxx(), yyyyyyy()).build(); pico.addComponent(Foo.class); // other components added Foo foo = pico.getcomponent(Foo.class) // Foo instance will be affected by two additonal behaviors.h3. Specific Behaviors
+{% highlight java %}
+pico = new DefaultPicoContainer();
+pico.as(SOME_BEHAVIOR).addComponent(Foo.class); 
+// the behavior has a property marking it, and the default component factory understands that property 
+// other components added 
+Foo foo = pico.getcomponent(Foo.class) 
+// Foo instance will be affected by an additional behavior.
+{% endhighlight %}
+
+p. You can build a container with the applicable property:
+
+{% highlight java %}
+pico = new PicoBuilder().withXXXBehavior().build();
+pico.addComponent(Foo.class); 
+// other components added 
+Foo foo = pico.getcomponent(Foo.class) 
+// Foo instance will be affected by an additional behavior.
+{% endhighlight %}
+
+p. Behaviors can be chained together by PicoBuilder:
+
+{% highlight java %}
+import static org.picocontainer.behaviors.Behaviors.xxxxxxx;
+import static org.picocontainer.behaviors.Behaviors.yyyyyyy;
+...
+pico = new PicoBuilder().withBehaviors(xxxxxxx(), yyyyyyy()).build();
+ pico.addComponent(Foo.class); 
+// other components added 
+Foo foo = pico.getcomponent(Foo.class) 
+// Foo instance will be affected by two additional behaviors.
+{% endhighlight %}
+
+h3. Specific Behaviors
 
 h4. Caching
 

@@ -21,7 +21,7 @@ p. Avalon was cancelled as an Apache project in 2004, by the Apache Software Fou
 
 h2. Setter Injection
 
-p.  "Joe Walnes":http://joe.truemesh.com/blog/ , "Mike Cannon Brookes":http://joe.truemesh.com/blog/ and others found themselves writing "XWork":http://www.opensymphony.com/xwork/ and "WebWork2":http://www.opensymphony.com/webwork/ to support their forthcoming book, "Java Open Source Programming":http://www.amazon.com/Java-Open-Source-Programming-Hibernate/dp/0471463620 . Joe pointed out that the concepts were very much like those from IoC/Avalon that Paul had been trying to convince Joe to adopt for a couple of years, but that dependencies were passed into the component via setters. The need for those dependencies was declared in some accompanying XML.
+p.  "Joe Walnes":http://joe.truemesh.com/blog/ , "Mike Cannon Brookes":http://blogs.atlassian.com/rebelutionary/ and others found themselves writing "XWork":http://www.opensymphony.com/xwork/ and "WebWork2":http://www.opensymphony.com/webwork/ to support their forthcoming book, "Java Open Source Programming":http://www.amazon.com/Java-Open-Source-Programming-Hibernate/dp/0471463620 . Joe pointed out that the concepts were very much like those from IoC/Avalon that Paul had been trying to convince Joe to adopt for a couple of years, but that dependencies were passed into the component via setters. The need for those dependencies was declared in some accompanying XML.
 
 p. Paul who worked with Joe at an energy trading company in London, suggested this was a"second type"of Inversion of Control. Type two IoC, as a term, has been obsoleted for "Setter Injection" of course.
 
@@ -63,7 +63,7 @@ p.  !images/ioc-timeline.png!
 
 h2. Prior Art
 
-p. As a concept, Inversion of Control was not entirely new when Steffano popularised it at Apache in 1998. Parts of it been talked about before as Dependency Inversion Principle (Bob Martin) and the 'Hollywood Principle' (don't call us, we'll call you), and the term cropped had been cropping up since 1996.
+p. As a concept, Inversion of Control was not entirely new when Steffano popularized it at Apache in 1998. Parts of it been talked about before as Dependency Inversion Principle (Bob Martin) and the 'Hollywood Principle' (don't call us, we'll call you), and the term cropped had been cropping up since 1996.
 
 p. Gang of Four, "Design Patterns":http://en.wikipedia.org/wiki/Design_Patterns , 1994 "Hollywood Pattern" (don't call us, we'll call you) as discussion point on 'Template' Pattern.
 

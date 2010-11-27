@@ -12,15 +12,8 @@ p. PicoContainer's core was designed with some goals in mind:
 * Small jar size.
 * Embeddable by design (no main method entry point).
 
-p. If someone has a need for PicoContainer that we did not originally envision, or a feature not yet imlemented, we will try to accomodate it.
+p. If someone has a need for PicoContainer that we did not originally envision, or a feature not yet implemented, we will try to accommodate it.
 
 p. The principle of Lowest Common Denominator (LCD) allows us, for PicoContainer itself, to keep things small, while allowing extensions to deliver the larger visions. Thus, logging, scripting, web-technologies, persistence, are dealt with by extensions of PicoContainer.
 
-Meanwhile, we want teams to be able to use PicoContainer in their project in an inobstrsuve way.We're happy for teams to embed it in such a way that its invisible.p. 
-
-p. 
-
-p. 
-
-p. 
-
+Meanwhile, we want teams to be able to use PicoContainer in their project in an unobtrusive way.We're happy for teams to embed it in such a way that its invisible.

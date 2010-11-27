@@ -9,11 +9,43 @@ p. Here is an example of how to use CommandLineArgumentsPicoContainer to map com
 
 p. Consider this component:
 
-public class BigFatComponent { URL spellWebService; int timeout; public BigFatComponent(String spellingWebServiceURL, int timeout) throws MalformedURLExeption { this.spellWebService = new URL(spellingWebServiceURL); this.timeout = timeout; } public String toString() { return "URL=" + spellWebService + ", timeout=" + timeout; } // other methods }p. For automatic binding of command line arguments to parameter names of the component:
+{% highlight java %}
+public class BigFatComponent { 
+  URL spellWebService; 
+  int timeout;
+  public BigFatComponent(String spellingWebServiceURL, int timeout) throws MalformedURLExeption {
+    this.spellWebService = new URL(spellingWebServiceURL); 
+    this.timeout = timeout;
+  }
+  public String toString() { 
+    return "URL=" + spellWebService + ", timeout=" + timeout; 
+  } 
+  // other methods 
+}
+{% endhighlight %}
 
-public static void main(String[] args) { PicoContainer argsContainer = new CommandLineArgumentsPicoContainer(args); MutablePicoContainer mpc = new DefaultPicoContainer(argsContainer); mpc.as(Characteristics.USE_NAMES).addComponent(BigFatComponent.class); Object o = mpc.getComponent(BigFatComponent.class); } ... java -jar myAppJar.jar -cp picocontainer-2.0.jar timeout=100 spellingWebServiceURL=http://ws.com/someService.wsdlp. Here is another manual use forcing an association between a item in the properties file, and the relative position of a parameter in the constructor:
+p. For automatic binding of command line arguments to parameter names of the component:
 
-mpc.addComponent(BigFatComponent.class, ConfigParameter("config1"), ConfigParameter("moreConfig")); ... java -jar myAppJar.jar -cp picocontainer-2.0.jar config1=http://ws.com/someService.wsd moreConfig=100p. Type conversion is automatic in many cases. Properties in a properties file are clearly strings. Parameters can be any of:
+{% highlight java %}
+public static void main(String[] args) { 
+  PicoContainer argsContainer = new CommandLineArgumentsPicoContainer(args); 
+  MutablePicoContainer mpc = new DefaultPicoContainer(argsContainer); 
+  mpc.as(Characteristics.USE_NAMES).addComponent(BigFatComponent.class); 
+  Object o = mpc.getComponent(BigFatComponent.class); 
+} 
+... 
+java -jar myAppJar.jar -cp picocontainer-2.x.jar timeout=100 spellingWebServiceURL=http://ws.com/someService.wsdl
+{% endhighlight %}
+
+p. Here is another manual use forcing an association between a item in the properties file, and the relative position of a parameter in the constructor:
+
+{% highlight java %}
+mpc.addComponent(BigFatComponent.class, ConfigParameter("config1"), ConfigParameter("moreConfig")); 
+... 
+java -jar myAppJar.jar -cp picocontainer-2.x.jar config1=http://ws.com/someService.wsd moreConfig=100
+{% endhighlight %}
+
+p. Type conversion is automatic in many cases. Properties in a properties file are clearly strings. Parameters can be any of:
 
 * String
 * All numeric types, boxed as well as primitives

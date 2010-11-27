@@ -22,12 +22,66 @@ p. There are some limitations:
 * the component's fields are not interceptable
 * only one component invoking the methods on another component will be intercepted.* components and related classes calling their own methods will not be intercepted
 
+{% highlight java %}
+public static class BiteReporter implements Apple {
+  private Intercepted.Controller controller;
+  public BiteReporter(Intercepted.Controller controller) {
+    this.controller = controller;
+  }
+  public boolean takeBite(int grams) { 
+    System.out.println("Bite of"+ grams +"grams of apple '"+ controller.getInstance().getName() +"'"); 
+    return false; // ignored, but necessary. 
+  } 
+}
+...
+pico = new DefaultPicoContainer(new Intercepting());
+pico.addComponent(Apple.class, BraeburnApple.class); 
+Intercepted intercepted = pico.getComponentAdapter(Apple.class).findAdapterOfType(Intercepted.class); 
+intercepted.addPreInvocation(Apple.class, new BiteReporter(intercepted.getController())); 
+// see also Intercpeted.addPostInvocation(...) method. 
+Apple a1 = pico.getComponent(Apple.class); a1.takeBite(100); 
+// prints Bite of 100 grams of apple 'Braeburn' ... irrespective of what else Braeburn.takeBite(int) does.
+pico = new DefaultPicoContainer();
+pico.as(INTERCEPT).addComponent(Apple.class, BraeburnApple.class); // etc
+pico = new PicoBuilder.withInterception().build();
+pico.addComponent(Apple.class, BraeburnApple.class); // etc
+pico = new PicoBuilder.withBehaviors(interception()).build();
+pico.addComponent(Apple.class, BraeburnApple.class); // etc
+{% endhighlight %}
 
-public static class BiteReporter implements Apple { private Intercepted.Controller controller; public BiteReporter(Intercepted.Controller controller) { this.controller = controller; } public boolean takeBite(int grams) { System.out.println("Bite of"+ grams +"grams of apple '"+ controller.getInstance().getName() +"'"); return false; // ignored, but necessary. } } ... pico = new DefaultPicoContainer(new Intercepting()); pico.addComponent(Apple.class, BraeburnApple.class); Intercepted intercepted = pico.getComponentAdapter(Apple.class).findAdapterOfType(Intercepted.class); intercepted.addPreInvocation(Apple.class, new BiteReporter(intercepted.getController())); // see also Intercpeted.addPostInvocation(...) method. Apple a1 = pico.getComponent(Apple.class); a1.takeBite(100); // prints Bite of 100 grams of apple 'Braeburn' // ... irrespective of what else Braeburn.takeBite(int) does.pico = new DefaultPicoContainer(); pico.as(INTERCEPT).addComponent(Apple.class, BraeburnApple.class); // etcpico = new PicoBuilder.withInterception().build(); pico.addComponent(Apple.class, BraeburnApple.class); // etcpico = new PicoBuilder.withBehaviors(interception()).build(); pico.addComponent(Apple.class, BraeburnApple.class); // etcp.  *Fine grained participation in interception* 
+p.  *Fine grained participation in interception* 
 Assuming you're passing in the Interceptor to the classes you're using for interception of a component, you can participate in the fate of the method call. For a 'pre' invocation, you can veto the calling of the 'real' method.
 
-public boolean takeBite(int grams) { if (grams>50) { controller.veto(); } return false; // will be passed back to the caller. }p. For a 'post' invocation, you can override the return value of the 'real' method.
+{% highlight java %}
+public boolean takeBite(int grams) { 
+  if (grams>50) { 
+    controller.veto(); 
+  } 
+  return false; // will be passed back to the caller. 
+}
+{% endhighlight %}
 
-public boolean takeBite(int grams) { if (grams>50) { controller.override(); (Apple) realApple = (Apple) controller.getInstance(); realApple.takeBite(-1 * grams); // undo ! } return false; // will be passed back to the caller. }p. Also for a 'post' invocation, you can access the return value of the 'real' method.
+p. For a 'post' invocation, you can override the return value of the 'real' method.
 
-public boolean takeBite(int grams) { boolean rv = (boolean) controller.getOriginalRetVal(); if (rv == false) { // do something ! } return true; // ignored as no 'override' }
+{% highlight java %}
+public boolean takeBite(int grams) { 
+  if (grams>50) { 
+    controller.override(); 
+    Apple realApple = (Apple) controller.getInstance(); 
+    realApple.takeBite(-1 * grams); // undo ! 
+  } 
+  return false; // will be passed back to the caller. 
+}
+{% endhighlight %}
+
+p. Also for a 'post' invocation, you can access the return value of the 'real' method.
+
+{% highlight java %}
+public boolean takeBite(int grams) { 
+  boolean rv = (boolean) controller.getOriginalRetVal(); 
+  if (rv == false) { 
+    // do something ! 
+  } 
+  return true; // ignored as no 'override' 
+}
+{% endhighlight %}

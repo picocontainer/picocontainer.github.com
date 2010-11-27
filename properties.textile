@@ -11,7 +11,30 @@ p. They can also be set in a more persistent manner for the MutablePicoContainer
 
 p. Some examples :
 
-import static org.picocontainer.Characteristics.SDI; import static org.picocontainer.Characteristics.CACHE; ... pico = new DefaultPicoContainer(); pico.as(CACHE).addComponent(Apple.class); pico.as(CACHE, SDI).addComponent(Pear.class);import static org.picocontainer.Characteristics.SDI; import static org.picocontainer.Characteristics.CACHE; ... pico = new DefaultPicoContainer(); pico.change(CACHE).addComponent(Apple.class); pico.change(SDI).addComponent(Pear.class);pico = new DefaultPicoContainer(); pico.as(Characteristics.CACHE).addComponent(Apple.class); pico.as(Characteristics.CACHE, Characteristics.SDI).addComponent(Pear.class);pico = new DefaultPicoContainer(); pico.change(Characteristics.CACHE).addComponent(Apple.class); pico.change(Characteristics.SDI).addComponent(Pear.class);p. Some characteristics are mutually exclusive. For example CDI, SDI. Meaning the last one set via 'as' or 'change' rules. Others are additive like CACHE and HIDE_IMPL. The order of these is not important.
+{% highlight java %}
+import static org.picocontainer.Characteristics.SDI;
+import static org.picocontainer.Characteristics.CACHE;
+...
+pico = new DefaultPicoContainer();
+pico.as(CACHE).addComponent(Apple.class);
+pico.as(CACHE, SDI).addComponent(Pear.class);
+import static org.picocontainer.Characteristics.SDI;
+import static org.picocontainer.Characteristics.CACHE;
+...
+pico = new DefaultPicoContainer();
+pico.change(CACHE).addComponent(Apple.class);
+pico.change(SDI).addComponent(Pear.class);
+
+pico = new DefaultPicoContainer();
+pico.as(Characteristics.CACHE).addComponent(Apple.class);
+pico.as(Characteristics.CACHE, Characteristics.SDI).addComponent(Pear.class);
+
+pico = new DefaultPicoContainer();
+pico.change(Characteristics.CACHE).addComponent(Apple.class);
+pico.change(Characteristics.SDI).addComponent(Pear.class);
+{% endhighlight %}
+
+p. Some characteristics are mutually exclusive. For example CDI, SDI. Meaning the last one set via 'as' or 'change' rules. Others are additive like CACHE and HIDE_IMPL. The order of these is not important.
 
 h3. Appropriate Behavior and Injection Factories.
 

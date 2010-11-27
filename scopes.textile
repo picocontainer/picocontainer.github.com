@@ -13,7 +13,45 @@ h2. Simple Examples
 
 p. Here are examples of parent/child setup:
 
-parent = new DefaultPicoContainer(); parent.addComponent(Apple.class); parent.addComponent(Orange.class); parent.addComponent(Pear.class); child = parent.makeChildContainer(); child.addComponent(DependsOnApple.class); // this is OK parent.start(); // cascades to child just fineparent = new DefaultPicoContainer(); parent.addComponent(Apple.class); parent.addComponent(Orange.class); parent.addComponent(Pear.class); child = parent.addChildContainer(new DefaultPicoContainer()); child.addComponent(DependsOnApple.class); // this is NOT OK. child can't see parent parent.start(); // cascades to child just fineparent = new DefaultPicoContainer(); parent.addComponent(Apple.class).addComponent(Orange.class).addComponent(Pear.class); child = parent.addChildContainer(new DefaultPicoContainer(parent)); child.addComponent(DependsOnApple.class); // this is OK parent.start(); // cascades to child just fineparent = new DefaultPicoContainer(); parent.addComponent(Apple.class).addComponent(Orange.class).addComponent(Pear.class); child = new DefaultPicoContainer(parent); child.addComponent(DependsOnApple.class); // this is OK parent.start(); // does NOT cascades to childp. There is no limit to the extent of the chained containers, for example - great grandparent, grandparent, parent, child, is OK.
+{% highlight java %}
+parent = new DefaultPicoContainer();  
+parent.addComponent(Apple.class);  
+parent.addComponent(Orange.class);  
+parent.addComponent(Pear.class);  
+child = parent.makeChildContainer();  
+child.addComponent(DependsOnApple.class);  
+// this is OK  
+parent.start();  
+// cascades to child just fine  
+
+parent = new DefaultPicoContainer();  
+parent.addComponent(Apple.class);  
+parent.addComponent(Orange.class);  
+parent.addComponent(Pear.class);  
+child = parent.addChildContainer(new DefaultPicoContainer());  
+child.addComponent(DependsOnApple.class);  
+// this is NOT OK. child can't see parent  
+parent.start();  
+// cascades to child just fine  
+
+parent = new DefaultPicoContainer();  
+parent.addComponent(Apple.class).addComponent(Orange.class).addComponent(Pear.class);  
+child = parent.addChildContainer(new DefaultPicoContainer(parent));  
+child.addComponent(DependsOnApple.class);  
+// this is OK  
+parent.start();  
+// cascades to child just fine  
+
+parent = new DefaultPicoContainer();  
+parent.addComponent(Apple.class).addComponent(Orange.class).addComponent(Pear.class);  
+child = new DefaultPicoContainer(parent);  
+child.addComponent(DependsOnApple.class);  
+// this is  OK  
+parent.start();  
+// does NOT cascades to child
+{% endhighlight %}
+
+p. There is no limit to the extent of the chained containers, for example - great grandparent, grandparent, parent, child, is OK.
 
 p. Garbage collection is the standard way of disposing of scoped containers. If the children refer to the parents, then assign child to null just works. If the parents refer to the children too, then you'll have to do a removeChildContainer(..) first before it will be eligible for garbage collection.
 

@@ -13,11 +13,18 @@ p. PicoContainer's most important feature is its ability to instantiate arbitrar
 
 p. Example:
 
-MutablePicoContainer pico = new DefaultPicoContainer(); pico.addComponent(ArrayList.class); List list = (List) pico.getComponent(ArrayList.class);p. (i) "MutablePicoContainer API ^ !/images/icons/linkext7.gif! ^ ":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/MutablePicoContainer.html 
+{% highlight java %}
+MutablePicoContainer pico = new DefaultPicoContainer();
+pico.addComponent(ArrayList.class); 
+List list = pico.getComponent(ArrayList.class);
+{% endhighlight %}
+
+p. (i) "MutablePicoContainer API ^ !/images/icons/linkext7.gif! ^ ":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/MutablePicoContainer.html 
 
 p. This code does the same as this:
 
-List list = new ArrayList();p. With a trivial example such as this there is no point in using PicoContainer. This was just to illustrate the basic API. PicoContainer becomes useful with larger number of classes and interfaces having complex dependencies between each other:
+List list = new ArrayList();
+p. With a trivial example such as this there is no point in using PicoContainer. This was just to illustrate the basic API. PicoContainer becomes useful with larger number of classes and interfaces having complex dependencies between each other:
 
 Complex DependenciesJuicer Example|
 | !images/complex-dependencies.png! || !images/juicer-peeler-peelable.png! ||
@@ -29,21 +36,66 @@ p. The "Juicer Example" diagram above could translate to the following code (we 
 
 p.  !images/apple-implements-peelable.png! 
 
-public interface Peelable { void peel(); }public class Apple implements Peelable { public void peel() { } }public class Peeler implements Startable { private final Peelable peelable; public Peeler(Peelable peelable) { this.peelable = peelable; } public void start() { peelable.peel(); } public void stop() { } }public class Juicer { private final Peelable peelable; private final Peeler peeler; public Juicer(Peelable peelable, Peeler peeler) { this.peelable = peelable; this.peeler = peeler; } }p. (Note that this code suffers from the antipattern "Propagating Dependency":propagating-dependency-antipattern.html but let's not worry about that for now !/images/icons/emoticons/smile.gif! )
+{% highlight java %}
+public interface Peelable { 
+  void peel(); 
+}
+public class Apple implements Peelable { 
+  public void peel() { } 
+}
+public class Peeler implements Startable {
+  private final Peelable peelable;
+  public Peeler(Peelable peelable) {
+    this.peelable = peelable;
+  }
+  public void start() { 
+	peelable.peel();
+  }
+  public void stop() { } 
+}
+public class Juicer {
+  private final Peelable peelable;
+  private final Peeler peeler;
+  public Juicer(Peelable peelable, Peeler peeler) {
+    this.peelable = peelable; 
+    this.peeler = peeler; 
+  } 
+}
+{% endhighlight %}
+
+p. (Note that this code suffers from the anti-pattern "Propagating Dependency":propagating-dependency-antipattern.html but let's not worry about that for now !/images/icons/emoticons/smile.gif! )
 
 h2. Assemble components
 
 p. You tell PicoContainer what classes to manage by registering them like this (the order of registration has no significance):
 
-MutablePicoContainer pico = new DefaultPicoContainer(); pico.addComponent(Apple.class); pico.addComponent(Juicer.class); pico.addComponent(Peeler.class);p. (i) "MutablePicoContainer API ^ !/images/icons/linkext7.gif! ^ ":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/MutablePicoContainer.html 
+{% highlight java %}
+MutablePicoContainer pico = new DefaultPicoContainer();
+pico.addComponent(Apple.class);
+pico.addComponent(Juicer.class);
+pico.addComponent(Peeler.class);
+{% endhighlight %}
+
+p. (i) "MutablePicoContainer API ^ !/images/icons/linkext7.gif! ^ ":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/MutablePicoContainer.html 
 
 h2. Instantiate components
 
 p. You can tell PicoContainer to give you an instance of a class like this (provided it has been registered previously):
 
-Juicer juicer = (Juicer) pico.getComponent(Juicer.class);p. This will cause PicoContainer to do something similar to this behind the scenes (except that PicoContainer uses reflection):
+{% highlight java %}
+Juicer juicer = (Juicer) pico.getComponent(Juicer.class);
+{% endhighlight %}
 
-Peelable peelable = new Apple(); Peeler peeler = new Peeler(peelable); Juicer juicer = new Juicer(peelable, peeler); return juicer;p.  !/images/icons/emoticons/information.gif! Note how PicoContainer figures out that Apple is a Peelable, so that it can be passed to Peeler and Juicer's constructors.
+p. This will cause PicoContainer to do something similar to this behind the scenes (except that PicoContainer uses reflection):
+
+{% highlight java %}
+Peelable peelable = new Apple(); 
+Peeler peeler = new Peeler(peelable); 
+Juicer juicer = new Juicer(peelable, peeler); 
+return juicer;
+{% endhighlight %}
+
+p.  !/images/icons/emoticons/information.gif! Note how PicoContainer figures out that Apple is a Peelable, so that it can be passed to Peeler and Juicer's constructors.
 
 h2. Container hierarchies
 
@@ -55,7 +107,22 @@ p. A container (and its registered components) can get access to components regi
 
 p.  !/images/icons/emoticons/warning.gif! THIS WON'T WORK! It is for illustration purposes only! !/images/icons/emoticons/warning.gif! 
 
-// Create x hierarchy of containers MutablePicoContainer x = new DefaultPicoContainer(); MutablePicoContainer y = new DefaultPicoContainer( x ); MutablePicoContainer z = new DefaultPicoContainer( y ); // Assemble components x.addComponent(Apple.class); y.addComponent(Juicer.class); z.addComponent(Peeler.class); // Instantiate components Peeler peeler = (Peeler) z.getComponent(Peeler.class); // WON'T WORK! peeler will be null peeler = (Peeler) x.getComponent(Peeler.class); // WON'T WORK! This will throw an exception Juicer juicer = (Juicer) y.getComponent(Juicer.class);p. This can be visualised as follows: !images/juicer-in-pico-hierarchy.png! 
+{% highlight java %}
+// Create x hierarchy of containers 
+MutablePicoContainer x = new DefaultPicoContainer();
+MutablePicoContainer y = new DefaultPicoContainer( x ); 
+MutablePicoContainer z = new DefaultPicoContainer( y ); 
+// Assemble components
+x.addComponent(Apple.class); 
+y.addComponent(Juicer.class); 
+z.addComponent(Peeler.class); 
+// Instantiate components 
+Peeler peeler = (Peeler) z.getComponent(Peeler.class); // WON'T WORK! peeler will be null 
+peeler = (Peeler) x.getComponent(Peeler.class); // WON'T WORK! This will throw an exception 
+Juicer juicer = (Juicer) y.getComponent(Juicer.class);
+{% endhighlight %}
+
+p. This can be visualised as follows: !images/juicer-in-pico-hierarchy.png! 
 
 p. Let's analyse what will happen here:
 
@@ -81,7 +148,8 @@ p.  !/images/icons/emoticons/warning.gif! In order for hierarchy-aware lifecycle
 
 h3. Example
 
-MutablePicoContainer parent = new DefaultPicoContainer(new Caching()); MutablePicoContainer child = new DefaultPicoContainer(parent); // We must let the parent container know about the child container. parent.addComponent(child); // This will start the parent, which will start the child. parent.start();p.  * !/images/icons/emoticons/warning.gif! * Lifecycle is really only going to work for PicoContainers that are also caching component instances. Caching was a default in PicoContainer 1.x, but is not for 2.x - be warned!
+MutablePicoContainer parent = new DefaultPicoContainer(new Caching()); MutablePicoContainer child = new DefaultPicoContainer(parent); // We must let the parent container know about the child container. parent.addComponent(child); // This will start the parent, which will start the child. parent.start();
+p.  * !/images/icons/emoticons/warning.gif! * Lifecycle is really only going to work for PicoContainers that are also caching component instances. Caching was a default in PicoContainer 1.x, but is not for 2.x - be warned!
 
 p.  !/images/icons/emoticons/warning.gif! Calling lifecycle methods on a container that has a parent container will *not* propagate the lifecycle to the parent container.
 
@@ -93,8 +161,23 @@ p. With PicoContainer you add components and get instances out in two styles.
 
 p. Classic bean style:
 
-pico = new DefaultPicoContainer(); pico.addComponent(ComponentOneImpl.class) // by type pico.addComponent(ComponentTwoImpl.class) // by type pico.addComponent(new ComponentThreeImpl()) // by instance pico.addComponent(ComponentFourImpl.class) // by type ComponentFourImpl four = pico.getComponent(ComponentFourImpl.class);p. Or you can use a "fluent":http://www.martinfowler.com/bliki/FluentInterface.html style if you want:
+{% highlight java %}
+pico = new DefaultPicoContainer();
+pico.addComponent(ComponentOneImpl.class) // by type 
+pico.addComponent(ComponentTwoImpl.class) // by type 
+pico.addComponent(new ComponentThreeImpl()) // by instance 
+pico.addComponent(ComponentFourImpl.class) // by type 
+ComponentFourImpl four = pico.getComponent(ComponentFourImpl.class);
+{% endhighlight %}
 
-ComponentFour four = new DefaultPicoContainer() .addComponent(ComponentOne.class) .addComponent(ComponentTwo.class) .addComponent(new ComponentThree()) .addComponent(ComponentFour.class) .getComponent(ComponentFour.class);h3. Where Next?
+p. Or you can use a "fluent":http://www.martinfowler.com/bliki/FluentInterface.html style if you want:
+
+{% highlight java %}
+ComponentFour four = new DefaultPicoContainer().addComponent(ComponentOne.class) 
+    .addComponent(ComponentTwo.class).addComponent(new ComponentThree())
+    .addComponent(ComponentFour.class).getComponent(ComponentFour.class);
+{% endhighlight %}
+
+h3. Where Next?
 
  %(callout)The "Dependency Injection":injection.html page discusses the types of Dependency Injection, with examples% 

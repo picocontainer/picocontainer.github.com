@@ -66,9 +66,15 @@ h2. Composers
 
 p. ComposingMonitor is an implementation of the Monitor design that works specifically in conjunction with noComponentFound(..) to allow greater collaboration in the supply of components for the purposes of injection. By definition it is only going to work if the type or object key that's required is missing from the container.
 
-MutablePicoContainer pico = new DefaultPicoContainer(new ComposingMonitor( /* varargs of composer instances */));p. If more than one is specified in the varargs above, then the first in the list to actually return non-null will be used. It is also possible for a fallback component monitor to be specified:
+MutablePicoContainer pico = new DefaultPicoContainer(new ComposingMonitor( /* varargs of composer instances */));
+p. If more than one is specified in the varargs above, then the first in the list to actually return non-null will be used. It is also possible for a fallback component monitor to be specified:
 
-ComponentMonitor otherCM = ... MutablePicoContainer pico = new DefaultPicoContainer(new ComposingMonitor(otherCM, /* varargs of composer instances */));p. See "Regex Composer":regex.html 
+{% highlight java %}
+ComponentMonitor otherCM = ... 
+MutablePicoContainer pico = new DefaultPicoContainer(new ComposingMonitor(otherCM, /* varargs of composer instances */));
+{% endhighlight %}
+
+p. See "Regex Composer":regex.html 
 
 h2. Future work
 

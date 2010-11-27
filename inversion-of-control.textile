@@ -31,21 +31,93 @@ h3. Examples
 
 p. Here is the simplest possible IoC component :
 
-public interface Orange { // methods } public class AppleImpl implements Apple { private Orange orange; public AppleImpl(Orange orange) { this.orange = orange; } // other methods }p. Here are some common smells that should lead you to refactor to IoC :
+{% highlight java %}
+public interface Orange { 
+  // methods 
+} 
+public class AppleImpl implements Apple {
+  private Orange orange;
+  public AppleImpl(Orange orange) {
+    this.orange = orange; 
+  } 
+  // other methods 
+}
+{% endhighlight %}
 
-public class AppleImpl implements Apple{ private Orange orange; public Apple() { this.orange = new OrangeImpl(); } // other methods }p. The problem is that you are tied to the OrangleImpl implementation for provision of Orange services. Simply put, the above apple cannot be a (configurable) component. It's an application. All hard coded. Not reusable. It is going to be very difficult to have multiple instances in the same classloader with different assembly.
+p. Here are some common smells that should lead you to refactor to IoC :
+
+{% highlight java %}
+public class AppleImpl implements Apple{
+  private Orange orange;
+  public Apple() {
+    this.orange = new OrangeImpl(); 
+  } 
+  // other methods 
+}
+{% endhighlight %}
+
+p. The problem is that you are tied to the OrangleImpl implementation for provision of Orange services. Simply put, the above apple cannot be a (configurable) component. It's an application. All hard coded. Not reusable. It is going to be very difficult to have multiple instances in the same classloader with different assembly.
 
 p. Here are some other smells along the same line :
 
-public class AppleImpl implements Apple { private static Orange orange = OrangeFactory.getOrange(); public Apple() { } // other methods }h2. Component Configuration
+{% highlight java %}
+public class AppleImpl implements Apple {
+  private static Orange orange = OrangeFactory.getOrange();
+  public Apple() { } 
+  // other methods 
+}
+{% endhighlight %}
+
+h2. Component Configuration
 
 p. Sometimes we see configuration like so ...
 
-public class BigFatComponent { String config01; String config02; public BigFatComponent() { ResourceFactory resources = new ResourceFactory(new File("mycomp.properties")); config01 = resources.get("config01"); config02 = resources.get("config02"); } // other methods }p. In the IoC world, it might be better to see the following for simple component designs :
+{% highlight java %}
+public class BigFatComponent { 
+  String config01; 
+  String config02;
+  public BigFatComponent() { 
+    ResourceFactory resources = new ResourceFactory(new File("mycomp.properties")); 
+    config01 = resources.get("config01"); 
+    config02 = resources.get("config02"); 
+  } 
+  // other methods 
+}
+{% endhighlight %}
 
-public class BigFatComponent { String config01; String config02; public BigFatComponent(String config01, String config02) { this.config01 = config01; this.config02 = config02; } // other methods }p. Or this for more complex ones, or ones designed to be more open to reimplementation ..
+p. In the IoC world, it might be better to see the following for simple component designs :
 
-public interface BigFatComponentConfig { String getConfig01(); String getConfig02(); } public class BigFatComponent { String config01; String config02; public BigFatComponent(BigFatComponentConfig config) { this.config01 = config.getConfig01(); this.config02 = config.getConfig02(); } // other methods }p. With the latter design there could be many different implementations of BigFatComponentConfig. Implementations such as:
+{% highlight java %}
+public class BigFatComponent { 
+  String config01; 
+  String config02;
+  public BigFatComponent(String config01, String config02) {
+    this.config01 = config01; 
+    this.config02 = config02; 
+  } 
+  // other methods 
+}
+{% endhighlight %}
+
+p. Or this for more complex ones, or ones designed to be more open to reimplementation ..
+
+{% highlight java %}
+public interface BigFatComponentConfig { 
+  String getConfig01(); 
+  String getConfig02();
+}
+public class BigFatComponent { 
+  String config01; 
+  String config02;
+  public BigFatComponent(BigFatComponentConfig config) {
+    this.config01 = config.getConfig01(); 
+    this.config02 = config.getConfig02(); 
+  } 
+  // other methods 
+}
+{% endhighlight %}
+
+p. With the latter design there could be many different implementations of BigFatComponentConfig. Implementations such as:
 
 # Hard coded (a default impl)
 # Implementations that take config from an XML document (file, URL based or inlined in using class)
@@ -110,15 +182,56 @@ h3. Constructor Dependency Injection
 
 p. This is where a dependency is handed into a component via its constructor :
 
-public interface Orange { // methods } public class AppleImpl implements Apple { private Orange orange; public AppleImpl(Orange orange) { this.orange = orange; } // other methods }h3. Setter Dependency Injection
+{% highlight java %}
+public interface Orange { 
+  // methods 
+} 
+
+public class AppleImpl implements Apple {
+  private Orange orange;
+  public AppleImpl(Orange orange) {
+    this.orange = orange; 
+  } 
+  // other methods 
+}
+{% endhighlight %}
+
+h3. Setter Dependency Injection
 
 p. This is where dependencies are injected into a component via setters :
 
-public interface Orange { // methods } public class AppleImpl implements Apple { private Orange orange; public void setOrange(Orange orange) { this.orange = orange; } // other methods }h3. Contextualized Dependency Lookup (Push Approach)
+{% highlight java %}
+public interface Orange { 
+  // methods 
+} 
+public class AppleImpl implements Apple {
+  private Orange orange;
+  public void setOrange(Orange orange) {
+    this.orange = orange; 
+  } 
+  // other methods 
+}
+{% endhighlight %}
+
+h3. Contextualized Dependency Lookup (Push Approach)
 
 p. This is where dependencies are looked up from a container that is managing the component :
 
-public interface Orange { // methods } public class AppleImpl implements Apple, DependencyProvision { private Orange orange; public void doDependencyLookup(DependencyProvider dp) throws DependencyLookupExcpetion{ this.orange = (Orange) dp.lookup("Orange"); } // other methods }h2. Terms: Service, Component&Class
+{% highlight java %}
+public interface Orange { 
+  // methods 
+} 
+public class AppleImpl implements Apple, DependencyProvision {
+  private Orange orange;
+  public void doDependencyLookup(DependencyProvider dp) throws DependencyLookupExcpetion{
+    this.orange = (Orange) dp.lookup("Orange"); 
+  } 
+  // other methods 
+}
+{% endhighlight %}
+
+h2. Terms: Service, Component&Class
+
 
 p. Component is the correct name for things managed in an IoC sense. However very small ordinary classes are manageable using IoC tricks, though this is for the very brave or extremists !http://docs.codehaus.org/images/icons/emoticons/smile.gif! 
 
@@ -142,14 +255,8 @@ p. With plain JNDI, lookup can be done in a classes' static initialiser, in the 
 
 h2. Related Pages
 
-* Contextualized Lookup*  "Avalon Framework":comparisons.html#comparison-ApacheAvalonanditscontainers 
-
-
-
-*  "IoC History":inversion-of-control-history.html 
-* *  "Dependency Injection":injection.html *  "Constructor Injection":constructor-injection.html 
-
-
-
-
-*  "Setter Injection":setter-injection.html 
+* Contextualized Lookup - "Avalon Framework":comparisons.html#comparison-ApacheAvalonanditscontainers 
+* "IoC History":inversion-of-control-history.html 
+* "Dependency Injection":injection.html 
+* "Constructor Injection":constructor-injection.html 
+* "Setter Injection":setter-injection.html 
