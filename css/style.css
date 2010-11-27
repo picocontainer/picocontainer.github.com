@@ -19,11 +19,10 @@ body                    {font-family: 'Geneva', 'Lucida Grande', 'Lucida Sans Un
 h2, em, q, p, .header   {font-family: 'Hoefler Text', Georgia, 'Times New Roman', Times, serif bold;}
 
 body                {text-align: center;}
-h2, h3, p, .prev    {text-align: left;}
-.next               {text-align: right;}
+h2, h3, p,    {text-align: left;}
 
 h2                  {font-size: 2.7em; line-height: 1em;}
-.header, .download  {font-size: 1.2em;}
+.header  {font-size: 1.2em;}
 h3, .desc           {font-size: 0.75em;}
 h3 em               {font-size: 1.3em;}
 p                   {font-size: 1.05em; line-height: 1.45em; text-indent: 0.75em;}
@@ -31,11 +30,10 @@ ul li               {font-size: 0.8em;}
 #footer_box         {font-size: 0.7em; line-height: 2em;}
 
 h3, em                      {font-weight: normal;}
-.header, .more, .download   {font-weight: bold;}
+.header, .more   {font-weight: bold;}
 q                           {font-style: italic;} 
 em                          {font-style: normal; font-variant: small-caps; letter-spacing: 0px;}
 .email                      {letter-spacing: -2px;}
-.download                   {letter-spacing: -1px;}
 ol li a                     {text-decoration: none;}
  
 
@@ -45,14 +43,12 @@ ol li a                     {text-decoration: none;}
 
 /* COLORS AND BACKGROUNDS */
 body                    {background-color: #fff;}
-#footer_box, a.download {background-color: #f0ffe0;}
-h1, a:hover, a.download:hover, a:focus, a.download:focus {background-color: #009900;}
+#footer_box, {background-color: #f0ffe0;}
+a:hover, a:focus {background-color: #009900;}
 
 body, .desc             {color: #232;}
 strong                  {color: #333133;}
 .header                 {color: #111;}
-.on                     {color: #070;}
-.off                    {color: #700;}
 a, .more                {color: #009900;}
 a:visited               {color: #2f53d3;}
 a img                   {border-color: #3f43f3;}
@@ -61,7 +57,7 @@ a:hover img             {border-color: #2f53d3;}
 ol li em                {color: #866;}
 
 /* LAYOUT */
-body, h1 a, h3, ol, ul, #footer_box, #content {margin-left: auto; margin-right: auto;}
+body, ol, #footer_box, {margin-left: auto; margin-right: auto;}
 h1, #footer_box {margin-top: 15px; margin-bottom: 10px;}
 em              {margin-bottom: 5px;}
 p               {padding: 3px 0px 3px 0;}
@@ -70,11 +66,7 @@ p               {padding: 3px 0px 3px 0;}
 h1              {width: 100%;  height:85px; clear: both;}
 h1 a            {width: 300px; height:85px; display:block;}
 #footer_box     {width: 100%; clear: both;} 
-.header, .desc  {display: block;}
-
-ol a, p a {padding: 3px;}
-p a, .menu li a         {color: #2f53d3;}
-p a:visited             {color: #2f5373;}
+.header,   {display: block;}
 
 /* HOME PAGE */
 ol              {width: 960px;}
@@ -84,14 +76,3 @@ ol li img       {width: 250px; height: 130px; border:2px solid; margin: 0px 8px 
 ol li.left      {clear: left;}
 ol li.right     {clear: right;}
 ol li em        {display: block;}
-
-/* POST PAGES */
-h2              {width: 75%; clear: left; float: left; padding: 15px 0 5px 0;}
-.download       {width: 25%; clear: right; float: right; margin-top: 0.8em; padding: 7px 0px 7px 0px;}
-h3              {clear: both; margin-bottom: 30px;}
-#content        {width: 800px;}
-#content img    {width: 798px; height: 268px; clear: both; float: left; border: 1px dashed #f9f9f9; margin: 10px 0 10px 0;}
-
-/* NEXT/PREV */
-ul              {width: 798px;}
-ul li           {width: 266px; float:left; margin: 30px 0 30px 0;}
