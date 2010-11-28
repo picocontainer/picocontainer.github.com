@@ -1,0 +1,8 @@
+/* HOME PAGE */
+ol              {width: 960px;}
+ol li           {width: 280px; float:left; border: 1px dashed #f9f9f9; padding: 13px 19px 13px 19px; min-height: 240px;}
+ol li a         {width: 270px; padding: 4px; border: 1px solid #fff; display: block;}
+ol li img       {width: 250px; height: 130px; border:2px solid; margin: 0px 8px 5px 8px;}
+ol li.left      {clear: left;}
+ol li.right     {clear: right;}
+ol li em        {display: block;}
