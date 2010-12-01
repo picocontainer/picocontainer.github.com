@@ -61,3 +61,16 @@ p               {padding: 3px 0px 3px 0;}
 #content {
 width:800px;
 }
+
+.callout {
+  border: 1px dashed black;
+  margin: 10px;
+  padding: 4px;
+  color: black;
+  background-color: #bbffbb;
+  visibility: visible;
+  overflow: visible;
+  display: table;
+}
+
+

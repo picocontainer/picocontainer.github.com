@@ -1,6 +1,6 @@
 ---
-layout: article
-name: Caching and Singleton
+layout: behavior-article
+name: Caching and Singletons
 ---
 
 p. This is generally where a component has a single instance in the container that is returned to the called of getComponent(..) rather than a new instance being created each time the container is asked. Note that this is very different to the Singleton as defined by the Gang-of-Four book 'Design Patterns' where a class has a static getInstance() method and a private static instance variable.
@@ -14,23 +14,17 @@ pico = new DefaultPicoContainer(new Caching());
 pico.addComponent(Apple.class); 
 Apple a1 = pico.getComponent(Apple.class); 
 Apple a2 = pico.getComponent(Apple.class); // both the same instance
-{% endhighlight %}
 
-{% highlight java %}
 pico = new DefaultPicoContainer(); 
 pico.as(CACHE).addComponent(Apple.class); 
 Apple a1 = pico.getComponent(Apple.class); 
 Apple a2 = pico.getComponent(Apple.class); // both the same instance
-{% endhighlight %}
 
-{% highlight java %}
 pico = new PicoBuilder().withCaching().build(); 
 pico.addComponent(Apple.class); 
 Apple a1 = pico.getComponent(Apple.class); 
 Apple a2 = pico.getComponent(Apple.class); // both the same instance
-{% endhighlight %}
 
-{% highlight java %}
 import static org.picocontainer.behaviors.Behaviors.caching; 
 ... 
 pico = new PicoBuilder().withBehaviors(caching()).build(); 
@@ -98,16 +92,15 @@ p. Only one style is shown here as you will need to hang on to the reference to 
 {% highlight java %}
 pico = new DefaultPicoContainer(new Storing()); 
 pico.addComponent(Apple.class); 
-Apple a1, a2, a3 
 new Thread() { 
 	public void run() { 
-		a1 = pico.getComponent(Apple.class); 
-		a2 = pico.getComponent(Apple.class); 
+		Apple a1 = pico.getComponent(Apple.class); 
+		Apple a2 = pico.getComponent(Apple.class); 
 	} 
 }).start(); 
 new Thread() { 
 	public void run() { 
-		a3 = pico.getComponent(Apple.class); 
+		Apple a3 = pico.getComponent(Apple.class); 
 	} 
 }).start(); 
 // a1 and a2 are the same instance 
@@ -118,11 +111,11 @@ p. The BehaviorFactory for Storing behavior is not stateless. It allows the cach
 
 {% highlight java %}
 storing = new Storing();  
-pico = new DefaultPicoContainer(sc);  
+pico = new DefaultPicoContainer(storing);  
 ....  
 storing.putCacheForThread(httpRequest.getSession().getAttribute("sessionComponentStore");  
 // do other methods that process request in session concept and may do getComponent(..) from the session container.  
-httpRequest.getSession().setAttribute("sessionComponentStore", sc.getCacheForThread());
+httpRequest.getSession().setAttribute("sessionComponentStore", storing.getCacheForThread());
 {% endhighlight %}
 
 p. See "scopes":scopes.html for another example for a web framework
