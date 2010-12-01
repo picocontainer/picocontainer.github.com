@@ -58,6 +58,21 @@ p               {padding: 3px 0px 3px 0;}
 #footer_box     {width: 100%; clear: both;} 
 .header,   {display: block;}
 
-#content {
-width:800px;
+
+.callout {
+  border: 1px dashed black;
+  margin: 10px;
+  padding: 4px;
+  color: black;
+  background-color: #bbffbb;
+  visibility: visible;
+  overflow: visible;
+  display: table;
+}
+
+.clear {
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
 }

@@ -3,6 +3,7 @@ layout: default
 ---
 <style type="text/css" media="all">
 @import url("./style/pygments.css");
+@import url("./css/article_style.css");
 </style>
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 	
@@ -11,4 +12,9 @@ layout: default
 	_uacct = "UA-2268879-1";
 	urchinTracker();
 </script>
+
+<div id="content">
+{% include top_menu.html %}
+<h1>{{ page.name }}</h1>
 {{ content }}
+</div>

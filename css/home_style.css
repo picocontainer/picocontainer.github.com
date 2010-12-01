@@ -1,4 +1,9 @@
 /* HOME PAGE */
+
+#content {
+width:800px;
+}
+
 ol              {width: 960px;}
 ol li           {width: 280px; float:left; border: 1px dashed #f9f9f9; padding: 13px 19px 13px 19px; min-height: 240px;}
 ol li a         {width: 270px; padding: 4px; border: 1px solid #fff; display: block;}
