@@ -28,6 +28,7 @@ width:860px;
 }
 
 ul li {
+	float:left; 
 	padding: 4px;
 }
 	
