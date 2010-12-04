@@ -1,5 +1,5 @@
 ---
-layout: behavior-article
+layout: article
 name: Caching and Singletons
 ---
 
