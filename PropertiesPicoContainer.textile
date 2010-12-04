@@ -1,5 +1,5 @@
 ---
-layout: pico
+layout: article
 name: PropertiesPicoContainer
 ---
 p. PropertiesPicoContainer is a special type of PicoContainer that is populated from the entries in a properties file.

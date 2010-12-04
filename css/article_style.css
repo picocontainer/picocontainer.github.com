@@ -27,8 +27,15 @@ width:860px;
   float:left;
 }
 
+.navGroup {
+	background-color: #f0ffe0;
+	border-style: dashed;
+	border-width: 1px;
+	padding: 4px 4px;
+	border-color: #bbffbb;
+}
+
 ul li {
-	float:left; 
 	padding: 4px;
 }
 	

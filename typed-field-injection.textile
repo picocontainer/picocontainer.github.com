@@ -1,5 +1,5 @@
 ---
-layout: pico
+layout: article
 name: Typed Field Injection
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: pico
+layout: article
 name: Mock Objects
 ---
 
