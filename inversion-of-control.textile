@@ -5,11 +5,11 @@ name: Inversion of Control
 
 h2. Overview
 
-p. Inversion of Control (IoC) is a design pattern that addresses a component's "dependency resolution":injection.html , "configuration":component-configuration.html and "lifecycle":lifecycle.html . It suggests that the control of those three should not be the concern of the component itself. Thus it is inverted back. Note to confuse things slightly, IoC is also relevant to simple classes, not just components, but we will refer to components throughout this text. The most significant aspect to IoC is dependency resolution and most of the discussion surrounding IoC dwells solely on that. Dependency mis-management is acknowledged to be the biggest problem that IoC is trying to solve. !images/ioc-venn.png! 
+p. Inversion of Control (IoC) is a design pattern that addresses a component's "dependency resolution":injection.html, "configuration":component-configuration.html and "lifecycle":lifecycle.html. It suggests that the control of those three should not be the concern of the component itself. Thus it is inverted back. Note to confuse things slightly, IoC is also relevant to simple classes, not just components, but we will refer to components throughout this text. The most significant aspect to IoC is dependency resolution and most of the discussion surrounding IoC dwells solely on that. Dependency mis-management is acknowledged to be the biggest problem that IoC is trying to solve. !images/ioc-venn.png! 
 
 h3. Types of IoC
 
-p. There are many types of IoC, but we'll concentrate on the type of IoC that PicoContainer introduced to the community - "Constructor Injection":constructor-injection.html .
+p. There are many types of IoC, but we'll concentrate on the type of IoC that PicoContainer introduced - "Constructor Injection":constructor-injection.html .
 
 h3. IoC History
 

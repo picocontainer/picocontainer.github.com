@@ -3,19 +3,6 @@ layout: article
 name: News
 ---
 
-p.  *Jun 30, 2010 - PicoContainer 2.11.1 released (316K jar)* 
-
-p. Changes (versus 2.11):
-
-* Life-cycles and CompositeInjection play better now. See "PICO-371":http://jira.codehaus.org/browse/PICO-371 
-* Setter Injection and Log4JComponentMonitor play better now. See "PICO-372":http://jira.codehaus.org/browse/PICO-372 
-
-
-p.  *Jun 27, 2009 - PicoContainer-Web 2.5 released* 
-
-p. See the "news page":http://picocontainer.org/web/news.html for it
-
-
 p.  *Jun 27, 2010 - PicoContainer 2.11 released (312K jar)* 
 
 p. New (since 2.10.2):

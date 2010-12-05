@@ -1,0 +1,11 @@
+---
+layout: post
+name: PicoContainer-Web 2.5 released
+bullets: PicoContainer enabling of Web Frameworks
+desc: A Major release
+---
+p.  Released Jun 27, 2009
+
+h2. Changes (versus 2.4):
+
+p. Some features and bog fixes.

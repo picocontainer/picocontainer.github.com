@@ -19,7 +19,7 @@ name: Coding projects
     {% cycle '<li>', '<li class="right">' %}
     <a href="{{ post.url }}/" title="More on {{ post.name }} {{ post.period }}">
        <span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
-       <em>{{ post.language | downcase }}</em>
+       <em>{{ post.bullets | downcase }}</em>
        <img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
        <span class="desc">{{post.desc}} (<span class="more">more&hellip;</span>)
     </a>
@@ -79,7 +79,7 @@ name: Coding projects
     <li class="right">
     <a href="/inversion-of-control.html" title="Inversion of Control">
   	<span class="header">Inversion of Control</span>
-  	<em>IoC</em>
+  	<em>Patterns, Principals, Concepts, Science</em>
   	<img src="/images/inversion-of-control_home.png" alt="page screenshot" />
   	<span class="desc">Inversion of Control (IoC) is the concept that gave birth to Dependency Injection, and should be understood by developers using DI containers (<span class="more">more&hellip;</span>)
   	</span>
