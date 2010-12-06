@@ -17,8 +17,8 @@ name: Coding projects
 
 {% for post in site.posts reversed limit:2 %}
     {% cycle '<li>', '<li class="right">' %}
-    <a href="{{ post.url }}/" title="More on {{ post.name }} {{ post.period }}">
-       <span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
+    <a href="{{ post.url }}" title="More on {{ post.name }} {{ post.period }}">
+       <span class="header">{{ post.name }}</span>
        <em>{{ post.bullets | downcase }}</em>
        <img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
        <span class="desc">{{post.desc}} (<span class="more">more&hellip;</span>)
@@ -31,7 +31,7 @@ name: Coding projects
   	<span class="header">Martin Fowler on DI</span>
   	<em>dependency injection, martin fowler</em>
   	<img src="/images/fowler_home.png" alt="page screenshot" />
-  	<span class="desc">Martin Fowler wrote the canonical article on Dependency Injection.  (<span class="more">read about it on his blili&hellip;</span>)
+  	<span class="desc">Martin Fowler wrote the canonical article on Dependency Injection.  (<span class="more">read about it on his bliki&hellip;</span>)
   	</span>
     </a>
   </li>

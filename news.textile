@@ -3,6 +3,12 @@ layout: article
 name: News
 ---
 
+{% for post in site.posts %}
+h1. {{ post.date | date_to_string }} >> "{{post.name}}":{{ post.url }}
+
+p. {{ post.desc }}
+{% endfor %}
+
 p.  *Jun 27, 2010 - PicoContainer 2.11 released (312K jar)* 
 
 p. New (since 2.10.2):
