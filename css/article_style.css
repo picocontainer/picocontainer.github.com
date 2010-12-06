@@ -4,6 +4,10 @@
 width:860px;
 }
 
+body {
+    text-align: left;
+}
+
 #top_menu {
   width: 860px;
   margin: 10px;
