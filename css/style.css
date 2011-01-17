@@ -37,7 +37,7 @@ ol li a                     {text-decoration: none;}
 
 /* COLORS AND BACKGROUNDS */
 body                    {background-color: #fff;}
-#footer_box, {background-color: #f0ffe0;}
+#footer_box {background-color: #f0ffe0;}
 a:hover, a:focus {background-color: #009900;}
 
 body, .desc             {color: #232;}
