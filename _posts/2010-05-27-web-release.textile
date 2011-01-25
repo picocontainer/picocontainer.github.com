@@ -1,7 +1,7 @@
 ---
 layout: post
 name: Web bindings updated
-bullets: PicoContainer enabling of Web Frameworks
+bullets: PicoContainer &amp; Web Frameworks
 desc: Version 2.5 of the bindings for popular web frameworks and Pico Web Remoting
 release: 2.5
 ---
