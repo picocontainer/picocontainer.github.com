@@ -19,7 +19,7 @@ pico.addComponent(ArrayList.class);
 List list = pico.getComponent(ArrayList.class);
 {% endhighlight %}
 
-p. (i) "MutablePicoContainer API ^ !/images/icons/linkext7.gif! ^ ":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/MutablePicoContainer.html 
+p. (i) "MutablePicoContainer API":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/MutablePicoContainer.html 
 
 p. This code does the same as this:
 
@@ -76,7 +76,7 @@ pico.addComponent(Juicer.class);
 pico.addComponent(Peeler.class);
 {% endhighlight %}
 
-p. (i) "MutablePicoContainer API ^ !/images/icons/linkext7.gif! ^ ":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/MutablePicoContainer.html 
+p. (i) "MutablePicoContainer API":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/MutablePicoContainer.html 
 
 h2. Instantiate components
 
@@ -130,11 +130,11 @@ p. Let's analyse what will happen here:
 * Line 14 will return null, as x can't see Peeler.
 * Line 16 will throw an exception, since Juicer's dependency to Peeler can't be satisfied (z can't be seen by y).
 
-p.  !/images/icons/emoticons/warning.gif! Since this obviously won't work, keep in mind that this was just an exercise to illustrate how container hierarchies work. !/images/icons/emoticons/information.gif! For a more concrete example of the usage of container hierarchies, see "PicoContainer Web ^ !/images/icons/linkext7.gif! ^ ":http://www.picocontainer.org/web .
+p.  !/images/icons/emoticons/warning.gif! Since this obviously won't work, keep in mind that this was just an exercise to illustrate how container hierarchies work. !/images/icons/emoticons/information.gif! For a more concrete example of the usage of container hierarchies, see "PicoContainer Web":http://www.picocontainer.org/web .
 
 h2. Lifecycle
 
-p. PicoContainer has support for "Lifecycle":lifecycle.html . If your classes implement "Startable ^ !/images/icons/linkext7.gif! ^ ":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/Startable.html , you can control the lifecycle of all your objects with a simple method call on the container. The container will figure out the correct order of invocation of start()/stop() all the objects managed by the container.
+p. PicoContainer has support for "Lifecycle":lifecycle.html . If your classes implement "Startable":http://www.picocontainer.org/picocontainer/latest/picocontainer/apidocs/org/picocontainer/Startable.html , you can control the lifecycle of all your objects with a simple method call on the container. The container will figure out the correct order of invocation of start()/stop() all the objects managed by the container.
 
 p. Calling start() on the container will call start() on all container managed objects in the order of their instantiation. This means starting with the ones that have no dependencies, and ending with the ones that have dependencies on others:
 

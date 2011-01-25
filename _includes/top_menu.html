@@ -1,3 +1,13 @@
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery("#top_menu").hide();
+  jQuery("#sitemap_toggle").click(function()
+  {
+    jQuery(this).next("#top_menu").slideToggle(500);
+  });
+});
+</script>
+<a href="javascript:;" id="sitemap_toggle" class="minibutton"><span id="sitemap_text">View/Hide Sitemap Inline ...</span></a>
 <div id="top_menu" class="desc">
 <div class="column">
 	<div class="navGroup">
