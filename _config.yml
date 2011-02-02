@@ -1,1 +1,2 @@
 permalink: /news/:year/:month/:day/:title.html
+exclude: javadoc

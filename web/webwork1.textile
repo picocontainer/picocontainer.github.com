@@ -64,6 +64,6 @@ p. With this design you can use Constructor Injection and three tier container s
 p. See "downloads":downloads.html on how to download the webwork module either using Maven or by downloading full distribution.
 We have a sample application. It is a small form-style web-app that shows and list of cheeses, allows you to add and delete from the list. "See the Maven2 source":http://svn.codehaus.org/picocontainer/java/2.x/trunk/web/examples/webwork-webapp/ for it. Here is a screenshot of it running:
 
-!images/WebWork1_App.jpg(WebWork1 webapp)
+!images/WebWork1_App.jpg(WebWork1 webapp)!
 
 p. "Download":warfiles/pico-webwork1-demo.war the war file for it (full Java source in WEB-INF/classes).

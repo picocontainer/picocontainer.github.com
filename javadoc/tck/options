@@ -1,0 +1,27 @@
+-classpath '/scm/oss/pico-c/pico/target/checkout/tck/target/classes:/Installed/M2_HOME/repository/com/thoughtworks/paranamer/paranamer/1.3/paranamer-1.3.jar:/Installed/M2_HOME/repository/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar:/Installed/M2_HOME/repository/org/jmock/jmock/2.4.0/jmock-2.4.0.jar:/Installed/M2_HOME/repository/junit/junit-dep/4.4/junit-dep-4.4.jar:/Installed/M2_HOME/repository/org/jmock/jmock-junit4/2.4.0/jmock-junit4-2.4.0.jar:/Installed/M2_HOME/repository/org/hamcrest/hamcrest-library/1.1/hamcrest-library-1.1.jar:/Installed/M2_HOME/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/scm/oss/pico-c/pico/target/checkout/container/target/picocontainer-2.8.jar:/Installed/M2_HOME/repository/xpp3/xpp3_min/1.1.3.4.O/xpp3_min-1.1.3.4.O.jar' -protected
+-sourcepath
+'/scm/oss/pico-c/pico/target/checkout/container/src/test'
+-author
+-bottom
+'Copyright &copy; 2003-2009 <a href="http://codehaus.org/">Codehaus</a>. All Rights Reserved.'
+-charset
+'ISO-8859-1'
+-d
+'/scm/oss/pico-c/pico/target/checkout/tck/target/apidocs'
+-doctitle
+'PicoContainer TCK 2.8 API'
+-header
+'<img class="logo" src="http://www.picocontainer.org/images/pico-logo.png"></img>'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api/'
+-link
+'http://proxytoys.codehaus.org/apidocs/'
+-link
+'http://jakarta.apache.org/commons/logging/commons-logging-1.0.4/docs/apidocs/'
+-linksource
+-stylesheetfile
+'/scm/oss/pico-c/pico/target/checkout/tck/target/apidocs/stylesheet.css'
+-use
+-version
+-windowtitle
+'PicoContainer TCK 2.8 API'
