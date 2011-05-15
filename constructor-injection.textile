@@ -15,7 +15,7 @@ p. The most important benefits of Constructor Injection are:
 * Classes that rely on Constructor Injection are generally "Good Citizens":patterns.html 
 * A dependency may be made immutable by making the dependency reference _final_ 
 
-p.  !http://docs.codehaus.org/images/icons/emoticons/information.gif! Martin Fowler explains "Constructor Injection":http://www.martinfowler.com/articles/injection.html#ConstructorInjectionWithPicocontainer in more detail.
+p.  !/images/information.gif! Martin Fowler explains "Constructor Injection":http://www.martinfowler.com/articles/injection.html#ConstructorInjectionWithPicocontainer in more detail.
 
 
 h2. Origin

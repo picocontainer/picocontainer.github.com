@@ -96,7 +96,7 @@ h3. Mainable (Not actually a container)
 public static void main(String[] args) {}
 {% endhighlight %}
 
-p. Familiar? Hopefully not !http://docs.codehaus.org/images/icons/emoticons/smile.gif! Static plays no part in a good IoC container/component design. This includes static launching of Java Webstart (JNLP) applications. If you have to keep mainable functionality separate your components away from the main() class so they may be instantiated separately. In .NET you'll have to make sure that the application assembly is a small bootstrap to a component one.
+p. Familiar? Hopefully not !/images/smile.gif! Static plays no part in a good IoC container/component design. This includes static launching of Java Webstart (JNLP) applications. If you have to keep mainable functionality separate your components away from the main() class so they may be instantiated separately. In .NET you'll have to make sure that the application assembly is a small bootstrap to a component one.
 
 h3. JNDI (Java API)
 

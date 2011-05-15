@@ -63,7 +63,7 @@ public class Juicer {
 }
 {% endhighlight %}
 
-p. (Note that this code suffers from the anti-pattern "Propagating Dependency":antipatterns/propagating-dependency-antipattern.html but let's not worry about that for now !/images/icons/emoticons/smile.gif! )
+p. (Note that this code suffers from the anti-pattern "Propagating Dependency":antipatterns/propagating-dependency-antipattern.html but let's not worry about that for now !/images/smile.gif! )
 
 h2. Assemble components
 
@@ -95,7 +95,7 @@ Juicer juicer = new Juicer(peelable, peeler);
 return juicer;
 {% endhighlight %}
 
-p.  !/images/icons/emoticons/information.gif! Note how PicoContainer figures out that Apple is a Peelable, so that it can be passed to Peeler and Juicer's constructors.
+p.  !/images/information.gif! Note how PicoContainer figures out that Apple is a Peelable, so that it can be passed to Peeler and Juicer's constructors.
 
 h2. Container hierarchies
 
@@ -105,7 +105,7 @@ p.  !images/pico-hierarchy.png!
 
 p. A container (and its registered components) can get access to components registered in a parent container, but not vice-versa. Consider this example, using the classes from above:
 
-p.  !/images/icons/emoticons/warning.gif! THIS WON'T WORK! It is for illustration purposes only! !/images/icons/emoticons/warning.gif! 
+p.  !/images//warning.gif! THIS WON'T WORK! It is for illustration purposes only! !/images//warning.gif! 
 
 {% highlight java %}
 // Create x hierarchy of containers 
@@ -130,7 +130,7 @@ p. Let's analyse what will happen here:
 * Line 14 will return null, as x can't see Peeler.
 * Line 16 will throw an exception, since Juicer's dependency to Peeler can't be satisfied (z can't be seen by y).
 
-p.  !/images/icons/emoticons/warning.gif! Since this obviously won't work, keep in mind that this was just an exercise to illustrate how container hierarchies work. !/images/icons/emoticons/information.gif! For a more concrete example of the usage of container hierarchies, see "PicoContainer Web":http://www.picocontainer.org/web .
+p.  !/images//warning.gif! Since this obviously won't work, keep in mind that this was just an exercise to illustrate how container hierarchies work. !/images//information.gif! For a more concrete example of the usage of container hierarchies, see "PicoContainer Web":http://www.picocontainer.org/web .
 
 h2. Lifecycle
 
@@ -144,14 +144,14 @@ p. Lifecycle also works for hierarchies of containers. Calling start() on a cont
 
 MutablePicoContainer.start()MutablePicoContainer.stop()|
 | !images/start-hierarchy.png! || !images/stop-hierarchy.png! ||
-p.  !/images/icons/emoticons/warning.gif! In order for hierarchy-aware lifecycle to work, child containers must be registered as components in their parent container. Just creating a container with another one as a parent will *not* cause the parent container to know about the child container.
+p.  !/images//warning.gif! In order for hierarchy-aware lifecycle to work, child containers must be registered as components in their parent container. Just creating a container with another one as a parent will *not* cause the parent container to know about the child container.
 
 h3. Example
 
 MutablePicoContainer parent = new DefaultPicoContainer(new Caching()); MutablePicoContainer child = new DefaultPicoContainer(parent); // We must let the parent container know about the child container. parent.addComponent(child); // This will start the parent, which will start the child. parent.start();
-p.  * !/images/icons/emoticons/warning.gif! * Lifecycle is really only going to work for PicoContainers that are also caching component instances. Caching was a default in PicoContainer 1.x, but is not for 2.x - be warned!
+p.  * !/images//warning.gif! * Lifecycle is really only going to work for PicoContainers that are also caching component instances. Caching was a default in PicoContainer 1.x, but is not for 2.x - be warned!
 
-p.  !/images/icons/emoticons/warning.gif! Calling lifecycle methods on a container that has a parent container will *not* propagate the lifecycle to the parent container.
+p.  !/images//warning.gif! Calling lifecycle methods on a container that has a parent container will *not* propagate the lifecycle to the parent container.
 
 p. Read more about lifecycle "here":lifecycle.html .
 

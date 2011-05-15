@@ -233,7 +233,7 @@ public class AppleImpl implements Apple, DependencyProvision {
 h2. Terms: Service, Component&Class
 
 
-p. Component is the correct name for things managed in an IoC sense. However very small ordinary classes are manageable using IoC tricks, though this is for the very brave or extremists !http://docs.codehaus.org/images/icons/emoticons/smile.gif! 
+p. Component is the correct name for things managed in an IoC sense. However very small ordinary classes are manageable using IoC tricks, though this is for the very brave or extremists !/images/smile.gif! 
 
 p. A component many have dependencies on others. Thus dependency is the term we prefer to describe the needs of a component.
 
