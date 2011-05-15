@@ -63,7 +63,7 @@ public class Juicer {
 }
 {% endhighlight %}
 
-p. (Note that this code suffers from the anti-pattern "Propagating Dependency":propagating-dependency-antipattern.html but let's not worry about that for now !/images/icons/emoticons/smile.gif! )
+p. (Note that this code suffers from the anti-pattern "Propagating Dependency":antipatterns/propagating-dependency-antipattern.html but let's not worry about that for now !/images/icons/emoticons/smile.gif! )
 
 h2. Assemble components
 
