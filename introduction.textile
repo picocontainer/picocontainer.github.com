@@ -99,7 +99,7 @@ p.  !/images/information.gif! Note how PicoContainer figures out that Apple is a
 
 h2. Container hierarchies
 
-p. PicoContainer provides a powerful alternative to the "Singleton":singleton-antipattern.html . With container hierarchies you can create singleton-like objects where you have fine grained control over the visibility scope of the instance. (The singleton pattern is static and global - it won't allow more than one instance, and it is visible from anywhere. Not nice when you try to build a large enterprise application from it).
+p. PicoContainer provides a powerful alternative to the "Singleton":antipatterns/singleton-antipattern.html . With container hierarchies you can create singleton-like objects where you have fine grained control over the visibility scope of the instance. (The singleton pattern is static and global - it won't allow more than one instance, and it is visible from anywhere. Not nice when you try to build a large enterprise application from it).
 
 p.  !images/pico-hierarchy.png! 
 

@@ -5,11 +5,11 @@ name: Downloads
 
 h3. Released Binary and Source Jars (1.x and 2.x)
 
-p. Core: "http://repository.codehaus.org/org/picocontainer/picocontainer/":http://repository.codehaus.org/org/picocontainer/picocontainer/ 
+p. Core: "https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer/":https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer/
 
-p. Gems: "http://repository.codehaus.org/org/picocontainer/picocontainer-gems/":http://repository.codehaus.org/org/picocontainer/picocontainer-gems/ 
+p. Gems: "https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer-gems/":https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer-gems/
 
-p. Distribution: "http://repository.codehaus.org/org/picocontainer/picocontainer-distribution/":http://repository.codehaus.org/org/picocontainer/picocontainer-distribution/ 
+p. Distribution: "https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer-distribution/":https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer-distribution/
 
 h3. Snapshot Binary and Source Jars
 
