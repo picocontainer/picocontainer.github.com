@@ -74,7 +74,7 @@ p. Factory *AdaptiveInjection* can also handle setter injection types, though it
 
 h2. References + Comparison
 
-p.  "Setter Injection":http://www.martinfowler.com/articles/injection.html#SetterInjectionWithSpring is a "Dependency Injection":injection.html variant where an object gets all dependencies via setter methods. PicoContainer support this with "SetterInjection":/javadoc/core/org/picocontainer/defaults/SetterInjectionComponentAdapter.html , but the PicoContainer team recommends "Constructor Injection":constructor-injection.html .
+p.  "Setter Injection":http://www.martinfowler.com/articles/injection.html#SetterInjectionWithSpring is a "Dependency Injection":injection.html variant where an object gets all dependencies via setter methods. PicoContainer support this with "SetterInjection":/javadoc/core/org/picocontainer/injectors/SetterInjection.html class, but the PicoContainer team recommends "Constructor Injection":constructor-injection.html instead.
 
-p. The disadvantage of Setter Injection there is the possibility to forget to set some of the dependencies.
+p. The disadvantage of Setter Injection there is the possibility to forget to inject some of the dependencies, and the component fail later because of that unset dependency.
 

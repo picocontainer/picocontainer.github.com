@@ -7,13 +7,22 @@ h2. Symptoms
 
 p. A dependency exists solely to be propagated to another class, but no methods are called upon the dependent object itself. For example:
 
+{% highlight java %}
 public class AControllerImpl implements AController {
   private SomeService service;
- private int someId;
- public AControllerImpl(SomeService service) {
-this.service = service; this.someId = generateRandomNumber();
+  private int someId;
+  public AControllerImpl(SomeService service) {
+    this.service = service; this.someId = generateRandomNumber();
+  }
+  public launchAnotherController() { 
+    AnotherController anotherController = new AnotherControllerImpl(service, fooId); 
+    anotherController.launch(); 
+  } 
+  // ... 
 }
-public launchAnotherController() { AnotherController anotherController = new AnotherControllerImpl(service, fooId); anotherController.launch(); } // ... }p. In this example, no method-calls are made upon 'service', it is simply propagated to the constructor of 'AnotherControllerImpl'. Therefore, it is not a valid dependency for 'AControllerImpl'.
+{% endhighlight %}
+
+p. In this example, no method-calls are made upon 'service', it is simply propagated to the constructor of 'AnotherControllerImpl'. Therefore, it is not a valid dependency for 'AControllerImpl'.
 
 h2. Causes
 
@@ -23,24 +32,47 @@ h2. What To Do
 
 p. Apply DependencyInjection to 'AControllerImpl' by replacing the dependency on 'SomeService' with a dependency on 'AnotherController'. If, as in the example above, 'AnotherControllerImpl' has a dependency upon some state that is not available at container-registration time, then we need to introduce a factory for creating 'AnotherController' as follows:
 
-p. TODO: This is maybe a little contrieved for this example. Maybe remove or simplify. (AH).
+p. TODO: This is maybe a little contrived for this example. Maybe remove or simplify. (AH).
 
+{% highlight java %}
 public class AControllerImpl implements AController {
   private AnotherControllerFactory anotherControllerFactory;
- private int someId;
- public AControllerImpl(AnotherControllerFactory anotherControllerFactory) {
-this.anotherControllerFactory = anotherControllerFactory; this.someId = generateRandomNumber();
+  private int someId;
+  public AControllerImpl(AnotherControllerFactory anotherControllerFactory) {
+    this.anotherControllerFactory = anotherControllerFactory; 
+    this.someId = generateRandomNumber();
+  }
+  public launchAnotherController() { 
+    AnotherController anotherController = anotherControllerFactory.createAnotherController(someId); 
+    anotherController.launch(); 
+  } 
+  // ... 
 }
-public launchAnotherController() { AnotherController anotherController = anotherControllerFactory.createAnotherController(someId); anotherController.launch(); } // ... }p. 'AnotherControllerFactory' is an interface:
+{% endhighlight %}
 
-public interface AnotherControllerFactory { AnotherController createAnotherController(int someId); }p. It can be implemented as follows::
+p. 'AnotherControllerFactory' is an interface:
 
+{% highlight java %}
+public interface AnotherControllerFactory { 
+  AnotherController createAnotherController(int someId); 
+}
+{% endhighlight %}
+
+p. It can be implemented as follows:
+
+{% highlight java %}
 public class AnotherControllerFactoryImpl implements AnotherControllerFactory {
   private SomeService service;
- public AnotherControllerFactoryImpl(SomeService service) {
-this.service = service;
+  public AnotherControllerFactoryImpl(SomeService service) {
+    this.service = service;
+  }
+  public AnotherController createAnotherController(int someId) { 
+    return new AnotherControllerImpl(service, someId); 
+  } 
 }
-public AnotherController createAnotherController(int someId) { return new AnotherControllerImpl(service, someId); } }p. Now we can register both 'AControllerImpl' and 'AnotherControllerFactoryImpl' in the container. When 'AControllerImpl' is instantiated, it is supplied with an implementation of 'AnotherControlFactory' that it can use to create an 'AnotherController' instance.
+{% endhighlight %}
+
+p. Now we can register both 'AControllerImpl' and 'AnotherControllerFactoryImpl' in the container. When 'AControllerImpl' is instantiated, it is supplied with an implementation of 'AnotherControlFactory' that it can use to create an 'AnotherController' instance.
 
 h1. Exceptions
 

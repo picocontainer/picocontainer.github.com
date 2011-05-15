@@ -38,9 +38,9 @@ p. Some characteristics are mutually exclusive. For example CDI, SDI. Meaning th
 
 h3. Appropriate Behavior and Injection Factories.
 
-p. Every characteristics set for a component must be handled by a BehaviorFactory or InjectionFactory that recognises it. They are typically chained together. DefaultPicoContainer's default BehaviorFactory and InjectionFactory are AdaptiveBehaviorFactory and AdaptiveInjectionFactory. These can handle CDI and SDI as well as CACHE and HIDE_IMPL.
+p. Every characteristics set for a component must be handled by a BehaviorFactory or InjectionFactory that recognizes it. They are typically chained together. DefaultPicoContainer's default BehaviorFactory and InjectionFactory are AdaptiveBehaviorFactory and AdaptiveInjectionFactory. These can handle CDI and SDI as well as CACHE and HIDE_IMPL.
 
-p. If you setup DefaultPicoContainer with a BehaviorFactory/InjectionFactory combination that is unaware of the characteristics you subsequently use, Pico will object by way of an exception as you add the component to the container. See "Unprocessed Properties":unprocessed-properties-help.html .
+p. If you setup DefaultPicoContainer with a BehaviorFactory/InjectionFactory combination that is unaware of the characteristics you subsequently use, Pico will object by way of an exception as you add the component to the container. See "Unprocessed Properties":/help/unprocessed-properties-help.html .
 
 p. Supplied properties (from org.picocontainer.Characteristics) -
 

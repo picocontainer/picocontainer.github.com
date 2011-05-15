@@ -27,7 +27,7 @@ p. .Net - http://svn.codehaus.org/picocontainer/dotnet/
 
 p. Maven repositories for artifact download :
 
-bq. p. numbered releases : "http://repository.codehaus.org/org/picocontainer/":http://repository.codehaus.org/org/picocontainer/ 
+bq. p. numbered releases : "https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/":https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/ 
 
 p. snapshot (work in progress) releases "http://snapshots.repository.codehaus.org/org/picocontainer/":http://snapshots.repository.codehaus.org/org/picocontainer/ 
 
@@ -48,7 +48,7 @@ p. If you wish to work with the Pico Sources, somtimes the 3rd party library Par
 <id>codehaus</id>
 <snapshots><enabled>false</enabled></snapshots>
 <releases><enabled>true</enabled></releases>
-<url>http://repository.codehaus.org/</url>
+<url>https://nexus.codehaus.org/content/repositories/releases/</url>
 </repository>
 </repositories>
 </profile>
