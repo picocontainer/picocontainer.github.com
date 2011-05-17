@@ -23,11 +23,15 @@ p. (i) "MutablePicoContainer API":/javadoc/core/org/picocontainer/MutablePicoCon
 
 p. This code does the same as this:
 
+{% highlight java %}
 List list = new ArrayList();
+{% endhighlight %}
+
 p. With a trivial example such as this there is no point in using PicoContainer. This was just to illustrate the basic API. PicoContainer becomes useful with larger number of classes and interfaces having complex dependencies between each other:
 
-Complex DependenciesJuicer Example|
-| !images/complex-dependencies.png! || !images/juicer-peeler-peelable.png! ||
+|_. Complex Dependencies |_. Juicer Example |
+| !images/complex-dependencies.png! | !images/juicer-peeler-peelable.png! |
+
 p. (Green means class, Yellow means interface). PicoContainer identifies dependencies by looking at the constructors of registered classes ( "Constructor Injection":constructor-injection.html ). PicoContainer can also be though of as a generic factory that can be configured dynamically. PicoContainer is able to instantiate a complex graph of several interdependent objects.
 
 h2. Write some simple classes and interfaces with dependencies
@@ -63,7 +67,7 @@ public class Juicer {
 }
 {% endhighlight %}
 
-p. (Note that this code suffers from the anti-pattern "Propagating Dependency":antipatterns/propagating-dependency-antipattern.html but let's not worry about that for now !/images/smile.gif! )
+p. (Note that this code suffers from the anti-pattern "Propagating Dependency":antipatterns/propagating-dependency-antipattern.html but let's not worry about that for now !/images/smile.gif!)
 
 h2. Assemble components
 
@@ -105,7 +109,7 @@ p.  !images/pico-hierarchy.png!
 
 p. A container (and its registered components) can get access to components registered in a parent container, but not vice-versa. Consider this example, using the classes from above:
 
-p.  !/images//warning.gif! THIS WON'T WORK! It is for illustration purposes only! !/images//warning.gif! 
+p. !/images//warning.gif! THIS WON'T WORK! It is for illustration purposes only! !/images//warning.gif! 
 
 {% highlight java %}
 // Create x hierarchy of containers 
@@ -130,7 +134,7 @@ p. Let's analyse what will happen here:
 * Line 14 will return null, as x can't see Peeler.
 * Line 16 will throw an exception, since Juicer's dependency to Peeler can't be satisfied (z can't be seen by y).
 
-p.  !/images//warning.gif! Since this obviously won't work, keep in mind that this was just an exercise to illustrate how container hierarchies work. !/images//information.gif! For a more concrete example of the usage of container hierarchies, see "PicoContainer Web":http://www.picocontainer.org/web .
+p. !/images//warning.gif! Since this obviously won't work, keep in mind that this was just an exercise to illustrate how container hierarchies work. !/images//information.gif! For a more concrete example of the usage of container hierarchies, see "PicoContainer Web":http://www.picocontainer.org/web .
 
 h2. Lifecycle
 
@@ -138,20 +142,23 @@ p. PicoContainer has support for "Lifecycle":lifecycle.html . If your classes im
 
 p. Calling start() on the container will call start() on all container managed objects in the order of their instantiation. This means starting with the ones that have no dependencies, and ending with the ones that have dependencies on others:
 
-MutablePicoContainer.start()MutablePicoContainer.stop()|
-| !images/start-container.png! || !images/stop-container.png! ||
+|_. MutablePicoContainer.start() |_. MutablePicoContainer.stop()! |
+| !images/start-container.png! | !images/stop-container.png! |
+
 p. Lifecycle also works for hierarchies of containers. Calling start() on a container with child containers will start all the containers in a breadth-first order, starting with itself. Likewise, calling stop() will call stop() on all containers in the hierarchy in a depth-first order. The pictures below show what happens when start() and stop() are called on a container with children.
 
-MutablePicoContainer.start()MutablePicoContainer.stop()|
-| !images/start-hierarchy.png! || !images/stop-hierarchy.png! ||
+|_. MutablePicoContainer.start() |_. MutablePicoContainer.stop() |
+| !images/start-hierarchy.png! | !images/stop-hierarchy.png! |
+
 p.  !/images//warning.gif! In order for hierarchy-aware lifecycle to work, child containers must be registered as components in their parent container. Just creating a container with another one as a parent will *not* cause the parent container to know about the child container.
 
 h3. Example
 
 MutablePicoContainer parent = new DefaultPicoContainer(new Caching()); MutablePicoContainer child = new DefaultPicoContainer(parent); // We must let the parent container know about the child container. parent.addComponent(child); // This will start the parent, which will start the child. parent.start();
-p.  * !/images//warning.gif! * Lifecycle is really only going to work for PicoContainers that are also caching component instances. Caching was a default in PicoContainer 1.x, but is not for 2.x - be warned!
 
-p.  !/images//warning.gif! Calling lifecycle methods on a container that has a parent container will *not* propagate the lifecycle to the parent container.
+p. !/images//warning.gif! Lifecycle is really only going to work for PicoContainers that are also caching component instances. Caching was a default in PicoContainer 1.x, but is not for 2.x - be warned!
+
+p. !/images//warning.gif! Calling lifecycle methods on a container that has a parent container will *not* propagate the lifecycle to the parent container.
 
 p. Read more about lifecycle "here":lifecycle.html .
 
