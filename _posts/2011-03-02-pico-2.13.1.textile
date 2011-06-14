@@ -1,0 +1,11 @@
+---
+layout: post
+name: PicoContainer 2.13.1
+bullets: General Purpose DI / IoC Container
+desc: Bug Fixed. Jar Size - 319K.
+---
+p.  Released: Mar 2, 2011
+
+h2. Changes (versus 2.11.3):
+
+* ThreadCaching behavior fixed - was not working for addComponent(instance) situations

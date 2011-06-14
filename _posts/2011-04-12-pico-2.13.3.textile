@@ -1,0 +1,12 @@
+---
+layout: post
+name: PicoContainer 2.13.3
+bullets: General Purpose DI / IoC Container
+desc: Readd deleted feature. Jar Size - 319K.
+---
+p.  Released: Apr 12, 2011
+
+h2. Changes (versus 2.11.2):
+
+* Previously deleted 'constructor.setAccessible(true)' is back (was deleted at the start of 2.x)
+* Ambiguous Component Resolution exception messages are clearer now. Ctor or Method being injected into is now described in the message.
