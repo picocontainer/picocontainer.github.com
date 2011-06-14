@@ -1,0 +1,17 @@
+---
+layout: post
+name: PicoContainer 2.12
+bullets: General Purpose DI / IoC Container
+desc: New features for setter injection. Jar Size - 316K.
+---
+p.  Released: Jan 8, 2011
+
+h2. New (versus 2.11.2):
+
+* Setter Injection can be optional now (boolean parameter in SetterInjection's constructor) 
+* Setter Injection can ignore a specific setter via 'notThisOneThough' (string parameter SetterInjection's constructor) 
+
+h2. Changes (versus 2.11.2):
+
+* Paranamer upgraded to 2.3
+ 

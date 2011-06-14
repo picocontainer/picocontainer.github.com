@@ -1,0 +1,11 @@
+---
+layout: post
+name: PicoContainer 2.11.2
+bullets: General Purpose DI / IoC Container
+desc: Two Bug Fixes. Jar Size - 316K.
+---
+p.  Released: Aug 30, 2010
+
+h2. Changes (versus 2.11.1):
+
+* Memory leak issue solved. See "PICO-373":http://jira.codehaus.org/browse/PICO-373 
