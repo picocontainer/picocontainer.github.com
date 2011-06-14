@@ -1,9 +1,8 @@
 ---
 layout: post
-name: PicoContainer updated
+name: PicoContainer 2.11.1
 bullets: General Purpose DI / IoC Container
 desc: Two Bug Fixes. Jar Size - 316K.
-release: 2.11.1
 ---
 p.  Released: Jun 30, 2010
 

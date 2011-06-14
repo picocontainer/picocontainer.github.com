@@ -1,9 +1,8 @@
 ---
 layout: post
-name: Web bindings updated
+name: PicoContainer Web 2.5
 bullets: PicoContainer &amp; Web Frameworks
 desc: Version 2.5 of the bindings for popular web frameworks and Pico Web Remoting
-release: 2.5
 ---
 p.  Released Jun 27, 2009
 
