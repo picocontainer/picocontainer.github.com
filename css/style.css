@@ -79,3 +79,5 @@ p               {padding: 3px 0px 3px 0;}
 	line-height: 0;
 	font-size: 0;
 }
+
+.inline {display: inline;}

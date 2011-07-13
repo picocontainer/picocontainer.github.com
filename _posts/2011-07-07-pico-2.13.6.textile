@@ -1,0 +1,16 @@
+---
+layout: post
+name: PicoContainer 2.13.6 Released
+bullets: General Purpose DI / IoC Container
+desc: Bug fixed. Jar Size - 319K.
+date: 2011-07-07
+---
+p.  Released: July 7th, 2011
+
+h2. Changes (versus 2.13.5):
+
+* Threading issue in shared IterativeInjector instance initialization eliminated
+
+<p class="callout" style="width: 7.5em; margin: 0 auto;"> "Download Now(Download This Jar From Codehaus Nexus)":https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer/2.13.6/picocontainer-2.13.6.jar </p>
+
+

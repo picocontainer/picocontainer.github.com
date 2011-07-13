@@ -1,18 +1,10 @@
 ---
 layout: post
-name: PicoContainer 2.13
+name: PicoContainer 2.13.4
 bullets: General Purpose DI / IoC Container
 desc: New feature component scanning, bug fixed. Jar Size - 319K.
 ---
-p.  Released: Feb 28, 2011
+p.  Released: May 1st, 2011
 
-h2. New (versus 2.12):
-
-* DefaultClassLoadingPicoContainer has a provision for iterating over classes that match a pattern (file system only, not ones in jars).
-
-h2. Changes (versus 2.11.2):
-
-* Fixed threading around HiddenImplementation usage.
-* "ReflectionLifecycle can take null for method names (say you only wanted to lifecycle around 'stop')":http://jira.codehaus.org/browse/PICO-379
-* "PicoBuilder is more easily subclasses now with a new addInjector() method.":http://jira.codehaus.org/browse/PICO-380
-* "CompositeLifecycleStrategy can delegate to any lifecycle type now.":http://jira.codehaus.org/browse/PICO-381
+h2. Changes (versus 2.13.3):
+* @@PostConstruct@ and @@PreDestroy@ supported in base class as described in "(inline) PICO-383 (Bug Database Reference)":https://jira.codehaus.org/browse/PICO-383
