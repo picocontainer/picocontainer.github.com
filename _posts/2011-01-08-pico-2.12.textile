@@ -3,6 +3,7 @@ layout: post
 name: PicoContainer 2.12
 bullets: General Purpose DI / IoC Container
 desc: New features for setter injection. Jar Size - 316K.
+image: pico_release
 ---
 p.  Released: Jan 8, 2011
 

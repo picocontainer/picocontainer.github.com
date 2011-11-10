@@ -4,6 +4,7 @@ name: PicoContainer 2.13
 bullets: General Purpose DI / IoC Container
 desc: New feature component scanning, bug fixed. Jar Size - 319K.
 date: 2011-02-28
+image: pico_release
 ---
 p.  Released: Feb 28, 2011
 
