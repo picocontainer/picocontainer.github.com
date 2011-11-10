@@ -2,7 +2,7 @@
 layout: post
 name: PicoContainer 2.14
 bullets: General Purpose DI / IoC Container
-desc: Bug fixed. Jar Size - 323K.
+desc: Better Exceptions. Jar Size - 323K.
 date: 2011-11-07
 image: pico_release
 ---
@@ -12,6 +12,6 @@ h2. Changes (versus 2.13.6):
 
 * Improved "Unsatisfied Dependency" messaging in error situations.
 
-<p class="callout" style="width: 7.5em; margin: 0 auto;"> "Download Now(Download This Jar From Codehaus Nexus)":https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer/2.13.6/picocontainer-2.13.6.jar </p>
+<p class="callout" style="width: 7.5em; margin: 0 auto;"> "Download Now (Download this jar from Codehaus Nexus server)":https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer/2.14/picocontainer-2.14.jar </p>
 
 
