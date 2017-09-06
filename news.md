@@ -4,7 +4,7 @@ name: News
 ---
 
 {% for post in site.posts %}
-## {{ post.date | date_to_string }} &gt;&gt; [{{post.name}}]({{ post.url }}
+## {{ post.date | date_to_string }} &gt;&gt; [{{post.name}}]({{ post.url }})
 {{ post.desc }}
 {% endfor %}
 
