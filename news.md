@@ -1,14 +1,14 @@
 ---
 layout: article
-name: News
+title: News
 ---
 
 {% for post in site.posts %}
-## {{ post.date | date_to_string }} &gt;&gt; [{{post.name}}]({{ post.url }})
+## {{ post.date | date_to_string }} &gt;&gt; [{{post.title}}]({{ post.url }})
 {{ post.desc }}
 {% endfor %}
 
-**Jun 27, 2010 - PicoContainer 2.11 released (312K jar)**
+## Jun 27, 2010 - PicoContainer 2.11 released (312K jar)
 
 New (since 2.10.2):
 
@@ -24,19 +24,19 @@ Changes (versus 2.10.2):
 -   Better support for handling ComponentAdapters while flushing instances.
 -   Some component monitors vulnerable to race conditions (now fixed)
 
-**Feb 25, 2010 - PicoContainer 2.10.2 released (308K jar)**
+## Feb 25, 2010 - PicoContainer 2.10.2 released (308K jar)
 
 Changes (versus 2.10.1):
 
 -   A fix of a NullPointerException issue when using ProviderAdapter
 
-**Feb 23, 2010 - PicoContainer 2.10.1 released (308K jar)**
+## Feb 23, 2010 - PicoContainer 2.10.1 released (308K jar)
 
 Changes (versus 2.10):
 
 -   Further generics work on ComponentAdapter signature as per [PICO-369](http://jira.codehaus.org/browse/PICO-369)
 
-**Feb 21, 2010 - PicoContainer 2.10 released (308K jar)**
+## Feb 21, 2010 - PicoContainer 2.10 released (308K jar)
 
 New (since 2.9):
 
@@ -49,7 +49,7 @@ Changes (versus 2.9):
 -   FactoryInjectors issue with 'into' being unspecified fixed [PICO-368](http://jira.codehaus.org/browse/PICO-364)
 -   Provided instances can now participate in lifecycles
 
-**Nov 2, 2009 - PicoContainer 2.9 released (299K jar)**
+## Nov 2, 2009 - PicoContainer 2.9 released (299K jar) 
 
 New (since 2.8.3):
 
@@ -66,7 +66,7 @@ Changes (versus 2.8.3):
 -   PicoBuilder able to do more with Lifecycle strategies
 -   Factory Injection improved with an 'InjectInto' type [PICO-358](http://jira.codehaus.org/browse/PICO-358)
 
-**Jun 18, 2009 - PicoContainer 2.8.3 released (299K jar)**
+## Jun 18, 2009 - PicoContainer 2.8.3 released (299K jar)
 
 New (since 2.8.2):
 
@@ -76,7 +76,7 @@ Changes (versus 2.8.2):
 
 -   Providers not passing on exceptions bug fixed: [PICO-357](http://jira.codehaus.org/browse/PICO-357)
 
-**May 27, 2009 - PicoContainer 2.8.2 released (298K jar)**
+## May 27, 2009 - PicoContainer 2.8.2 released (298K jar)
 
 Changes (versus 2.8.1):
 
@@ -84,7 +84,7 @@ Changes (versus 2.8.1):
 -   More optimized Paranamer usage and upgrade to 2.0
 -   Generic Collections more consistent between Setter and Constructor injection [PICO-354](http://jira.codehaus.org/browse/PICO-354)
 
-**May 20, 2009 - PicoContainer 2.8.1 released (298K jar)**
+## May 20, 2009 - PicoContainer 2.8.1 released (298K jar)
 
 New (since 2.8):
 
@@ -97,11 +97,11 @@ Changes (versus 2.8):
 -   Paranamer upgraded to 1.5
 -   A couple of bugs fixed [PICO-352](http://jira.codehaus.org/browse/PICO-352) and [353](http://jira.codehaus.org/browse/PICO-353)
 
-**Feb 26, 2009 - PicoContainer-Web 2.3 released**
+## Feb 26, 2009 - PicoContainer-Web 2.3 released
 
 See the [news page](http://picocontainer.org/web/news.html) for it
 
-**Feb 26, 2009 - PicoContainer 2.8 released (286K jar)**
+## Feb 26, 2009 - PicoContainer 2.8 released (286K jar)
 
 New (since 2.7):
 
@@ -114,7 +114,7 @@ Changes (versus 2.7):
 -   Improved handling of Constant Parameters for class instances
 -   Adapter.findAdapterofType() null handling improved
 
-**Jan 20, 2009 - PicoContainer 2.7 released (278K jar)**
+## Jan 20, 2009 - PicoContainer 2.7 released (278K jar)
 
 New (since 2.6):
 
@@ -134,7 +134,7 @@ Changes (versus 2.6):
 -   Paranamer (included in PicoContainer jar) has had a couple of bugs fixed.
 -   Issued 343 fixed where generic collections were not not being injected correctly
 
-**October 14, 2008 - PicoContainer 2.6 released (265K jar)**
+## October 14, 2008 - PicoContainer 2.6 released (265K jar)
 
 New (since 2.5.1):
 
@@ -146,13 +146,13 @@ Changes (versus 2.5.1):
 
 -   Permissions fix for AdaptingInjection
 
-**Aug 14, 2008 - PicoContainer 2.5.1 released (255K jar)**
+## Aug 14, 2008 - PicoContainer 2.5.1 released (255K jar)
 
 Changes (versus 2.5):
 
 -   makeChildContainer passes componentMonitor to the child container.
 
-**July 25, 2008 - PicoContainer 2.5 released (255K jar)**
+## July 25, 2008 - PicoContainer 2.5 released (255K jar)
 
 New (since 2.4):
 
@@ -166,13 +166,13 @@ Changes (versus 2.4):
 -   ConsoleComponentMonitor does need to be final, thus is not now.
 -   Attempts to chain a series of MutablePicoContainer.as() statements are blocked now. Instead users are directed towards the varargs feature of the same method.
 
-**July 02, 2008**
+## July 02, 2008
 
 PicoContainer [Web](http://picocontainer.org/web/news.html) , [Script](http://picocontainer.org/script/news.html) , [Persistence](http://picocontainer.org/persistence/news.html) and [Logging](http://picocontainer.org/logging/news.html) 2.x released
 
 See links above for respective news pages
 
-**June 26, 2008 - PicoContainer 2.4 released (253K jar)**
+## June 26, 2008 - PicoContainer 2.4 released (253K jar)
 
 New (since 2.3):
 
@@ -192,7 +192,7 @@ Changes (versus 2.3):
 -   PICO-0314 fixed - StartableLifecycleStrategy can now have custom Disposable alternate classes correctly
 -   PICO-0303 fixed - ReflectionLifecycleStrategy was not bubbling lifecycle exceptions correctly
 
-**May 24, 2008 - PicoContainer 2.3 released (241K jar)**
+## May 24, 2008 - PicoContainer 2.3 released (241K jar)
 
 New (since 2.2):
 
@@ -209,7 +209,7 @@ Changes (versus 2.2):
 -   Embedded Paranamer now upgraded to 1.1.3
 -   Some of the monitors are now serializable when they were not formerly
 
-**May 9, 2008 - PicoContainer 2.2 released (224K jar)**
+## May 9, 2008 - PicoContainer 2.2 released (224K jar)
 
 New (since 2.1):
 
@@ -225,13 +225,13 @@ Changes (versus 2.1):
 
 -   Teams embedding PicoContainer and (completely hiding it from user communities) can extend StartableLifecycleStrategy and provide their own Startable interface (was buggy)
 
-**Mar 31, 2008 - PicoContainer 2.1 released (194K jar)**
+## Mar 31, 2008 - PicoContainer 2.1 released (194K jar)
 
 New (since 2.0):
 
 -   A new ComponentMonitor method to allow allow for better mocking of select components during unit testing.
 
-**Jan 19, 2008 - PicoContainer 2.0 released (190K jar)**
+## Jan 19, 2008 - PicoContainer 2.0 released (190K jar)
 
 New (since 2.0-beta-2):
 
@@ -245,7 +245,7 @@ Changes (versus 2.0-beta-2):
 -   Build moved to JUnit 4.x and JMock 2.x (does not affect users of PicoContainer)
 -   Built-in parameter name access, as opposed jar dependency
 
-**August 26, 2007 - PicoContainer 2.0 beta 2 released (152K jar)**
+## August 26, 2007 - PicoContainer 2.0 beta 2 released (152K jar)
 
 New (versus 2.0-beta-1):
 
@@ -263,7 +263,7 @@ Changes (versus 2.0-beta-1):
 -   Renames of behaviors and injectors to more verb-like style
 -   Startable interface more easily overridden to own choice
 
-**July 15, 2007 - PicoContainer 2.0 BETA-1 released (128K jar)**
+## July 15, 2007 - PicoContainer 2.0 BETA-1 released (128K jar)
 
 New:
 
@@ -281,45 +281,45 @@ Changes:
 
 <span class="callout">April, 2007: Work begins on PicoContainer 2.x. It is substantially a refactoring of the PicoContainer 1.x codeline using the inbuilt features of Intellij IDEA and Eclipse. Using the existing unit tests as a guide, many small commits were made to the code-base to take PicoContainer in a more JDK 1.5 direction, and add in other features not seen in competing containers like parameter name access. Along the way, the API was simplified and parts of NanoContainer were bought closer to the core of PicoContainer.</span>
 
-**Mar 18, 2007**
+## Mar 18, 2007
 
 PicoContainer 1.3 released (113K jar)
 
-**January 19, 2006**
+## January 19, 2006
 
 PicoContainer 1.2 released (112K jar)
 
-**November 4, 2004**
+## November 4, 2004
 
 PicoContainer 1.1 released (75K jar)
 
-**June 5, 2004**
+## June 5, 2004
 
 PicoContainer 1.0 released (49K jar)
 
-**February 21, 2004**
+## February 21, 2004
 
 PicoContainer 1.0 beta-5 (50K jar)
 
 PicoContainer split into a core jar and 'gems' for things less often used
 
-**January 23, 2004**
+## January 23, 2004
 
 PicoContainer 1.0 beta-4 (64K jar)
 
-**November 03, 2003**
+## November 03, 2003
 
 PicoContainer 1.0 beta-3 (52K jar)
 
-**September 10, 2003**
+## September 10, 2003
 
 PicoContainer 1.0 beta-2 (44K jar)
 
-**August 14, 2003**
+## August 14, 2003
 
 PicoContainer 1.0 beta-1 (39K jar)
 
-**July 17, 2003**
+## July 17, 2003
 
 PicoContainer 1.0 alpha-2 (36K jar)
 
@@ -329,7 +329,7 @@ PicoContainer 1.0 alpha-1 (25K jar)
 
 Generalized Constructor Injection available for the first time. This was very much PicoContainer's idiom. ATG Dynamo had something similar for web components, but Pico released this first as a general embedable API for the Java world. Goals for Pico are a) lightweight/embeddable, b) no XML or meta-data - 'autowiring' only, c) no lock-in, d) popularize Constructor Injection over Avalon and OSGi style of IoC, e) no dependencies for the container itself.
 
-**June 1, 2003**
+## June 1, 2003
 
 PicoContainer experimentation begins
 
