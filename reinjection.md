@@ -3,13 +3,13 @@ layout: article
 name: Reinjection
 ---
 
-p. Reinjection is where an existing instance, that may have been already created by PicoContainer, can have a method called to inject more dependancies.
+Reinjection is where an existing instance, that may have been already created by PicoContainer, can have a method called to inject more dependancies.
 
-h2. Direct Reinjection via 'Reinjector'
+## Direct Reinjection via 'Reinjector'
 
-p. Consider the following example of class that could benefit from reinjection:
+Consider the following example of class that could benefit from reinjection:
 
-{% highlight java %}
+```java
 public class ShoppingCart {  
     private Store store;  
     private User user;  
@@ -27,43 +27,44 @@ public class ShoppingCart {
         return true;  
     }  
 }
-{% endhighlight %}
+```
 
-p. The class would be instantiated and have 'store' and 'user' satisfied via constructor injection. Later, perhaps corresponding to a web request, addItemTo could be invoked with relevant parameters. Indeed the addItemTo method could be called many times after instantiation.
+The class would be instantiated and have 'store' and 'user' satisfied via constructor injection. Later, perhaps corresponding to a web request, addItemTo could be invoked with relevant parameters. Indeed the addItemTo method could be called many times after instantiation.
 
-p. And here is a fragment of Java showing reinjection in use:
+And here is a fragment of Java showing reinjection in use:
 
-{% highlight java %}
+```java
 MutablePicoContainer pico = new TransientPicoContainer();  
 pico.addComponent(ShoppingCart.class, myShoppingCartInstance);  
 pico.addComponent(Make.class, myMake); // you are more likely to use providers that directly hard code values like this.  
 pico.addComponent(Model.class, myModel);  
 pico.addComponent(int.class, myQuantity);  
 boolean result = (Boolean) new Reinjector(pico).reinject(ShoppingCart.class, "addItemTo");
-{% endhighlight %}
+```
 
-p. In the above example, the PicoContainer instance (or one of its parents) can inject a Make, a Model and a quantity (int / Integer).
+In the above example, the PicoContainer instance (or one of its parents) can inject a Make, a Model and a quantity (int / Integer).
 
-p. And here the same scenario this time leveraging parameter names:
+And here the same scenario this time leveraging parameter names:
 
-{% highlight java %}
+```java
 MutablePicoContainer pico = new TransientPicoContainer();  
 pico.as(USE_NAMES).addComponent(ShoppingCart.class, myShoppingCartInstance);  
 pico.addComponent("make", myMake); // you are more likely to use providers that directly hard code values like this.  
 pico.addComponent("model", myModel);  
 pico.addComponent("quantity", myQuantity);  
 boolean result = (Boolean) new Reinjector(pico).reinject(ShoppingCart.class, "addItemTo");
-{% endhighlight %}
+```
 
-p. The above would be most useful if you had ambiguous parameter types like 'addItemTo(String make, String model)'
+The above would be most useful if you had ambiguous parameter types like 'addItemTo(String make, String model)'
 
-p. For reinjection to work, you really need to know the exact method to be injected into. You indicate which method by a reflection method reference (not shown), or by method name (as above). In our case for the method name to work it should not be overloaded in the class. You could also rely on an @Inject annotation, but that only makes sense where there is one method in the class to be used in this way. If you are implicating a reinjection method by name (rather than reflection method reference), and there are more than one matching, then the last one invoked will have it's return value returned to the caller.
+For reinjection to work, you really need to know the exact method to be injected into. You indicate which method by a reflection method reference (not shown), or by method name (as above). In our case for the method name to work it should not be overloaded in the class. You could also rely on an @Inject annotation, but that only makes sense where there is one method in the class to be used in this way. If you are implicating a reinjection method by name (rather than reflection method reference), and there are more than one matching, then the last one invoked will have it's return value returned to the caller.
 
-h2. Reinjection as a type of regular Injection
+Reinjection as a type of regular Injection
+------------------------------------------
 
-p. This is where reinjection is managed by a PicoContainer instance, rather than directly.
+This is where reinjection is managed by a PicoContainer instance, rather than directly.
 
-{% highlight java %}
+```java
 public class ShoppingCart {  
     private List<Item> list = new ArrayList<Item>();  
     public void addItemTo(Make make, Model model, int quantity) {  
@@ -75,7 +76,6 @@ public class ShoppingCart {
 Method addItemToMethod = ShoppingCart.class.getMethods("addItemTo", Make.class, Model.class, int.class);  
 PicoContainer pico = new TransientPicoContainer(new Reinjection(new MethodInjection(addItemToMethod), parent), parent);  
 ShoppingCart cart = pico.getComponent(ShoppingCart.class);
-{% endhighlight %}
+```
 
-p. The method addItemTo() is called during the getComponent() invocation. This works because the return type is void. A non-void type would cause getComponent() to fail with a class cast exception. If you have that component design need, you need to use the Reinjector directly.
-
+The method addItemTo() is called during the getComponent() invocation. This works because the return type is void. A non-void type would cause getComponent() to fail with a class cast exception. If you have that component design need, you need to use the Reinjector directly.

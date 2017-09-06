@@ -1,8 +1,8 @@
-p. Struts 1 (or just 'Struts') has been superseded by Struts 2 in recent years. There is still a huge community for Struts 1 web applications though.
+Struts 1 (or just 'Struts') has been superseded by Struts 2 in recent years. There is still a huge community for Struts 1 web applications though.
 To configure PicoContainer to handle the dependency injection of Struts actions, refer to the web.xml below.
 web.xml
 
-{% highlight xml %}
+```xml
 <web-app>  
   <display-name>PicoContainer-Web and Struts1 Webapp</display-name>  
   
@@ -48,13 +48,14 @@ web.xml
   </welcome-file-list>  
   
 </web-app>  
-{% endhighlight %}
+```
 
-h2. struts-config.xml
+## struts-config.xml
 
-p. Things are different in the struts-config.xml file though - there is a PicoContainer enabled RequestProcessor:
 
-{% highlight xml %}
+Things are different in the struts-config.xml file though - there is a PicoContainer enabled RequestProcessor:
+
+```xml
   <form-beans>  
     <form-bean name="cheeseForm" type="org.picocontainer.web.sample.struts.CheeseForm">  
     </form-bean>  
@@ -68,16 +69,15 @@ p. Things are different in the struts-config.xml file though - there is a PicoCo
   
   <controller processorclass="org.picocontainer.web.struts.PicoRequestProcessor">        
   </controller>
-{% endhighlight %}
+```
 
-  
-p. With this design you can use Constructor Injection and three tier container scoping for Struts web applications. Make sure you make and configure your own "WebappComposer":composition.html implementation.
-See "downloads":downloads.html on how to download the struts module either using Maven or by downloading full distribution.
+With this design you can use Constructor Injection and three tier container scoping for Struts web applications. Make sure you make and configure your own [WebappComposer](composition.html) implementation.
+See [downloads](downloads.html) on how to download the struts module either using Maven or by downloading full distribution.
 
-h2. Example App
+## Example App
 
-p. We have a sample application. It is a small form-style web-app that shows and list of cheeses, allows you to add and delete from the list. "See the Maven2 source":http://svn.codehaus.org/picocontainer/java/2.x/trunk/web/examples/struts-webapp/ for it. Here is a screenshot of it running:
+We have a sample application. It is a small form-style web-app that shows and list of cheeses, allows you to add and delete from the list. [See the Maven2 source](http://svn.codehaus.org/picocontainer/java/2.x/trunk/web/examples/struts-webapp/) for it. Here is a screenshot of it running:
 
-!images/Struts1_App.jpg!
+![](images/Struts1_App.jpg)
 
-"Download the war file":warfiles/pico-struts1-demo.war for it (full Java source in WEB-INF/classes).
+[Download the war file](warfiles/pico-struts1-demo.war) for it (full Java source in WEB-INF/classes).

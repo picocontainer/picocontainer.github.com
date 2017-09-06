@@ -3,13 +3,13 @@ layout: article
 name: Hiding Implementations
 ---
 
-h2. Hiding and Swapping of Implementations
+## Hiding and Swapping of Implementations
 
-h3. Implementation Hiding %(subheading)(Located in PicoContainer Gems)% 
+### Implementation Hiding <span class="Gems PicoContainer in Located"></span>
 
-p. This is where the implementation of the component is hidden from other components using it. The instance cannot be cast back to the implementation. It only works if the type has an interface that it implements.
+This is where the implementation of the component is hidden from other components using it. The instance cannot be cast back to the implementation. It only works if the type has an interface that it implements.
 
-{% highlight java %}
+```java
 pico = new DefaultPicoContainer(new ImplementationHiding());
 pico.addComponent(Apple.class, AppleImpl.class);
 Apple a1 = pico.getComponent(Apple.class); // cannot cast back to AppleImpl
@@ -27,17 +27,17 @@ import static org.picocontainer.behaviors.Behaviors.implementationHiding;
 pico = new PicoBuilder().withBehaviors(implementationHiding()).build();
 pico.addComponent(Apple.class, AppleImpl.class);
 Apple a1 = pico.getComponent(Apple.class); // cannot cast back to AppleImpl
-{% endhighlight %}
+```
 
-p. This behavior leverages Reflection's dynamic proxy capability.
+This behavior leverages Reflection's dynamic proxy capability.
 
-p. There's another implementation hiding behavior in Pico Gems called %(style1)AsmImplemenationHiding% that leverages ASM to make 'more concrete' hidden implementations than is possible via reflection. It generates real classes using "ASM":http://asm.objectweb.org/ 
+There's another implementation hiding behavior in Pico Gems called <span class="style1">AsmImplemenationHiding</span> that leverages ASM to make 'more concrete' hidden implementations than is possible via reflection. It generates real classes using [ASM](http://asm.objectweb.org/)
 
-h3. Hot Swapping %(subheading)(Located in PicoContainer Gems)% 
+### Hot Swapping <span class="Gems PicoContainer in Located"></span>
 
-p. This builds on the %(style1)ASMImplementationHiding% behavior above, but also allows the hot swapping of component implementations during use. It has implicit caching behavior too.
+This builds on the <span class="style1">ASMImplementationHiding</span> behavior above, but also allows the hot swapping of component implementations during use. It has implicit caching behavior too.
 
-{% highlight java %}
+```java
 pico = new DefaultPicoContainer(new HotSwapping());
 pico.addComponent(Map.class, HashMap.class);
 Map firstMap = pico.getComponent(Map.class);
@@ -48,4 +48,4 @@ Map secondMap = pico.getComponent(Map.class);
 secondMap.put("apple","orange"); 
 // first map and second map are the same 
 // 'foo' is not a key in the map, wereas 'apple' is
-{% endhighlight %}
+```

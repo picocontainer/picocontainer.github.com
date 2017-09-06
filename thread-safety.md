@@ -3,16 +3,15 @@ layout: article
 name: Thread Safety Behaviors
 ---
 
+## Thread Safety
 
-h2. Thread Safety
+When components are created by two threads concurrently, with the intention of the instance being cached, it is possible in a small percentage of cases for the first instance into the cache to be replaced with a second instance. To prevent this, you may want to try one of two behaviors to make the operation thread safe.
 
-p. When components are created by two threads concurrently, with the intention of the instance being cached, it is possible in a small percentage of cases for the first instance into the cache to be replaced with a second instance. To prevent this, you may want to try one of two behaviors to make the operation thread safe.
+### Synchronizing
 
-h3. Synchronizing
+Synchronizing wraps object creation in Java's classic <span class="style1">synchronize</span> feature:
 
-p. Synchronizing wraps object creation in Java's classic %(style1)synchronize% feature:
-
-{% highlight java %}
+```java
 pico = new DefaultPicoContainer(new Synchronizing().wrap(new Caching()));
 pico.addComponent(Apple.class);
 Apple a1 = pico.getComponent(Apple.class);
@@ -32,13 +31,13 @@ pico = new PicoBuilder().withBehaviors(synchronizing(), caching()).build();
 pico.addComponent(Apple.class);
 Apple a1 = pico.getComponent(Apple.class);
 Apple a2 = pico.getComponent(Apple.class); // both the same instance
-{% endhighlight %}
+```
 
-h3. Locking
+### Locking
 
-p. Locking wraps object creation in JDK 1.5's ReentrantLock facility. It is suggested that this is a more efficient alternative to the %(style1)Synchronizing% behavior above:
+Locking wraps object creation in JDK 1.5's ReentrantLock facility. It is suggested that this is a more efficient alternative to the <span class="style1">Synchronizing</span> behavior above:
 
-{% highlight java %}
+```java
 pico = new DefaultPicoContainer(new Locking().wrap(new Caching()));
 pico.addComponent(Apple.class);
 Apple a1 = pico.getComponent(Apple.class);
@@ -58,4 +57,4 @@ pico = new PicoBuilder().withBehaviors(synchronizing(), caching()).build();
 pico.addComponent(Apple.class);
 Apple a1 = pico.getComponent(Apple.class);
 Apple a2 = pico.getComponent(Apple.class); // both the same instance
-{% endhighlight %}
+```

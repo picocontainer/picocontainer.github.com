@@ -1,2 +1,5 @@
 _site/
 *.psd
+.idea/
+.jekyll-metadata
+Gemfile.lock

@@ -3,11 +3,11 @@ layout: article
 name: Factory Injection
 ---
 
-h3. Overview
+## Overview
 
-p. This allows an instance to be injected via a factory that is aware of the thing it is injecting into and can make a custom instance just for that injectee. This type of injection is only possible if you add an Adapter for it directly that subclasses *FactoryInjection<T>* 
+This allows an instance to be injected via a factory that is aware of the thing it is injecting into and can make a custom instance just for that injectee. This type of injection is only possible if you add an Adapter for it directly that subclasses **FactoryInjection<T>**
 
-{% highlight java %}
+```java
 public class Apple {
   private final Log log;
   private final Orange orange;
@@ -18,11 +18,11 @@ public class Apple {
  } 
  // methods 
 }
-{% endhighlight %}
+```
 
-h3. Usage
+## Usage
 
-{% highlight java %}
+```java
 public class LogInjector extends FactoryInjector<Log>{ 
   public Log getComponentInstance(PicoContainer container, final Type into) throws PicoCompositionException { 
     return LogFactory.getLog((Class) into); 
@@ -33,7 +33,6 @@ pico = new DefaultPicoContainer(new ConstructorInjection());
 pico.addComponent(Apple.class);
 pico.addAdapter(new LogInjector()); 
 // etc Apple apple = pico.getComponent(Apple.class);
-{% endhighlight %}
+```
 
-p. We have implementations in this style for Log4j, Commons-Logging, Java-Logging and SLF4J. They are in the org.picocontainer.gems.injectors package.
-
+We have implementations in this style for Log4j, Commons-Logging, Java-Logging and SLF4J. They are in the org.picocontainer.gems.injectors package.

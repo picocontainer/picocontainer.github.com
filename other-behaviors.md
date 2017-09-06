@@ -3,11 +3,11 @@ layout: article
 name: Other Behaviors
 ---
 
-h3. Property Applying
+## Property Applying
 
-p. This is where there are a number of setters for a component that will be could be set after instantiation. A way of handing in some configuration if you like.
+This is where there are a number of setters for a component that will be could be set after instantiation. A way of handing in some configuration if you like.
 
-{% highlight java %}
+```java
 class Foo {  
   String message;  
   public void setMessage(String message) {  
@@ -40,11 +40,11 @@ pico.addComponent(Foo.class);
 PropertyApplicator pa = (PropertyApplicator) pico.getComponentAdapter(Foo.class);  
 pa.setProperty("message", "hello");  
 System.out.println(pico.getComponent(Foo.class)); // prints hello  
-{% endhighlight %}
+```
 
-h3. Handling Behavior Chains
+## Handling Behavior Chains
 
-{% highlight java %}
+```java
 import static org.picocontainer.behaviors.Behaviors.caching;  
 import static org.picocontainer.behaviors.Behaviors.propertyApplying;  
 ...  
@@ -54,19 +54,19 @@ Cached cached = (Cached) pico.getComponentAdapter(Foo.class);
 PropertyApplicator pa = (PropertyApplicator) getDelegate(PropertyApplicator.class);  
 pa.setProperty("message", "hello");  
 System.out.println(pico.getComponent(Foo.class)); // prints hello  
-{% endhighlight %}
+```
 
-h2. Automatic
+## Automatic
 
-p. This is where a component is going to be instantiated regardless of whether:
+This is where a component is going to be instantiated regardless of whether:
 
-* it is looked up
-* any component that needs it is looked up
-* it is Startable
+-   it is looked up
+-   any component that needs it is looked up
+-   it is Startable
 
-p. It is most likely that you're doing this because the component in question is self contained and doing something once only. Alternatively, you're cutting a legacy codebase over from nest-of-singletons to dependency injection in stages.
+It is most likely that you're doing this because the component in question is self contained and doing something once only. Alternatively, you're cutting a legacy codebase over from nest-of-singletons to dependency injection in stages.
 
-{% highlight java %}
+```java
 class Foo { 
   public Foo() { 
     System.out.println("Foo was instantiated"); 
@@ -91,4 +91,4 @@ pico = new PicoBuilder().withBehaviors(automatic()).build();
  pico.addComponent(Foo.class);
  pico.addComponent("bar", String.class);
  pico.getComponent("bar"); // Foo instantiated too.
-{% endhighlight %}
+```

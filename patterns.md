@@ -5,35 +5,35 @@ title: Design Patterns
 
 Key Patterns
 
-h1. Inversion of Control (IoC).
+## Inversion of Control (IoC).
 
 The idea that an application is controlled from the top down
 
-h1. Separation of Concerns (SoC)
+## Separation of Concerns (SoC)
 
 The idea that a class (aspect) should do one job and do it well
 
-h1. Separation of API (or Interface) from Implementation
+## Separation of API (or Interface) from Implementation
 
 The idea that you define and code to work interfaces
 
-h1. Aspect Oriented Programming (AOP)
+## Aspect Oriented Programming (AOP)
 
 Mostly lightweight nowadays where you add a chain of interceptors around a method call that can handle orthogonal concerns
 
-h1. Component Oriented Programming (COP)
+## Component Oriented Programming (COP)
 
 The idea that you decompose your software into components
 
-h1. Declarative Programming
+## Declarative Programming
 
 Where you use a declarative-style language (usually xml) to determine things like component wiring (i.e. your average tomcat config file, generalized)
 
-h1. Event Based Programming (EBP)
+## Event Based Programming (EBP)
 
 Basically making the inter-object method call asynchronous and encapsulating such a call into some kind of event object that can be queued, modified, etc
 
-h1. More Thinking
+## More Thinking
 
 Good Citizen: Least surprise, least paranoia
 
@@ -56,9 +56,9 @@ Accept dependent object that can easily be substituted with Mock Objects (I don'
 Chain multiple constructors to a common place (using this(...)).
 Always define hashCode() alongside equals()
 Prefer immutable value objects that I can easily throw away.
-Have a special value for 'nothing' - e.g. Collections.EMPTY_SET.
+Have a special value for 'nothing' - e.g. Collections.EMPTY\_SET.
 Raise checked exceptions when the caller asked for something unreasonable - e.g. open a non-existent file.
 Raise unchecked exceptions when I can't do something reasonable that the caller asked of me - e.g. disk error when reading from an opened file.
 Only catch exceptions that can be handled fully.
 Only log information that someone needs to see.
-Classes that are designed for "Constructor Injection":injection.html are better citizens than those that are not.
+Classes that are designed for [Constructor Injection](injection.html) are better citizens than those that are not.

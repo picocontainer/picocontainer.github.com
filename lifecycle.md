@@ -3,23 +3,23 @@ layout: article
 name: Component Lifecycle
 ---
 
-p. Inversion of Control is three things: component dependencies and configuration, but also Component Lifecycle.
+Inversion of Control is three things: component dependencies and configuration, but also Component Lifecycle.
 
-p. After instantiation, if the component warrants it, a 'start' stage may be required. More specifically, if a container has injected and instantiated all components in a set, one or more of them may require starting in the same order they were instantiated. Later, in reverse order, the same component(s) may require stopping. In fact start and stop may happen more than one for the life of an application. Disposal may happen once only, before the component is eligible for garbage collection.
+After instantiation, if the component warrants it, a 'start' stage may be required. More specifically, if a container has injected and instantiated all components in a set, one or more of them may require starting in the same order they were instantiated. Later, in reverse order, the same component(s) may require stopping. In fact start and stop may happen more than one for the life of an application. Disposal may happen once only, before the component is eligible for garbage collection.
 
-p.  *Lifecycle is really only going to work for PicoContainers that are also caching component instances. Caching was a default in PicoContainer 1.x, but is not for 2.x - be warned!* 
+**Lifecycle is really only going to work for PicoContainers that are also caching component instances. Caching was a default in PicoContainer 1.x, but is not for 2.x - be warned!**
 
-p. Thus lifecycle implies three methods: start, stop or dispose
+Thus lifecycle implies three methods: start, stop or dispose
 
-p. In PicoContainer we allow a pluggable LifecycleStrategy, listed here:
+In PicoContainer we allow a pluggable LifecycleStrategy, listed here:
 
-h3. Startable (the default)
+### Startable (the default)
 
-p. Our own interface for startable. We wish it were in the JDK, because we're big into making components unencumbered by the trappings of containment. In English: we'd rather not make components implement/extend/throw anything from our framework. Its a 'transparency' thing.
+Our own interface for startable. We wish it were in the JDK, because we're big into making components unencumbered by the trappings of containment. In English: we'd rather not make components implement/extend/throw anything from our framework. Its a 'transparency' thing.
 
-p. Here's an example of components fitting that ideal:
+Here's an example of components fitting that ideal:
 
-{% highlight java %}
+```java
 public class Apple implements Startable { 
   public void start() { 
     // listen on socket, start thread etc. 
@@ -33,15 +33,15 @@ pico = new DefaultPicoContainer(new StartableLifecycleStrategy());
 pico.addComponent(Apple.class);
 pico.start(); // start gets called 
 Apple a = pico.getComponent(Apple.class);
-{% endhighlight %}
+```
 
-p. The StartableLifecycleStrategy can be extended if you prefer your own interface for Startable. Just make a subclass, override getStartableInterface() and getDisposableInterface(), possibly also one or more of the getStartMethodName(), getStopMethodName() or getDisposeMethodName() methods.
+The StartableLifecycleStrategy can be extended if you prefer your own interface for Startable. Just make a subclass, override getStartableInterface() and getDisposableInterface(), possibly also one or more of the getStartMethodName(), getStopMethodName() or getDisposeMethodName() methods.
 
-h3. Reflection based start/stop/dispose
+### Reflection based start/stop/dispose
 
-p. This works without an lifecycle interface (as above). Instead it works via reflection and configurable method names.
+This works without an lifecycle interface (as above). Instead it works via reflection and configurable method names.
 
-{% highlight java %}
+```java
 public class Apple { 
   public void start() { 
     // listen on socket, start thread etc. 
@@ -55,15 +55,15 @@ pico = new DefaultPicoContainer(new ReflectionLifecycleStrategy());
 pico.addComponent(Apple.class);
 pico.start(); // start gets called, and propagates to components 
 Apple a = pico.getComponent(Apple.class);
-{% endhighlight %}
+```
 
-p. By default, ReflectionLifecycleStrategy looks for methods named 'start', 'stop' and 'dispose'. If you have other synonyms for start/stop/dispose, just use the right constructor for ReflectionLifecycleStrategy class and provide them via the cons.
+By default, ReflectionLifecycleStrategy looks for methods named 'start', 'stop' and 'dispose'. If you have other synonyms for start/stop/dispose, just use the right constructor for ReflectionLifecycleStrategy class and provide them via the cons.
 
-h3. Java EE 5 annotation based start/dispose
+### Java EE 5 annotation based start/dispose
 
-p. This works without an interface, but with annotations in front of the designated methods
+This works without an interface, but with annotations in front of the designated methods
 
-{% highlight java %}
+```java
 public class Apple { 
   @PostConstruct 
   public void startUp() { 
@@ -79,21 +79,21 @@ pico = new DefaultPicoContainer(new JavaEE5LifecycleStrategy());
 pico.addComponent(Apple.class);
 pico.start(); // start gets called, and propagates to components 
 Apple a = pico.getComponent(Apple.class);
-{% endhighlight %}
+```
 
-p. These annotations are supplied with Java 6 (and above), but come in a jar for Java 5 and below. See "http://mvnrepository.com/artifact/javax.annotation/jsr250-api":http://mvnrepository.com/artifact/javax.annotation/jsr250-api 
+These annotations are supplied with Java 6 (and above), but come in a jar for Java 5 and below. See <http://mvnrepository.com/artifact/javax.annotation/jsr250-api>
 
-h3. No Lifecycle
+### No Lifecycle
 
-p. DefaultPicoContainer does sets StartableLifecycleStrategy by default. You can specify NullLifecycleStrategy instead if you are sure that no components honor any lifecycle concept, and you want a faster operation by some infinitesimal amount.  That or you want to deliberately ignore lifecycle strategies that do exist, though that seems to be looking for trouble.
+DefaultPicoContainer does sets StartableLifecycleStrategy by default. You can specify NullLifecycleStrategy instead if you are sure that no components honor any lifecycle concept, and you want a faster operation by some infinitesimal amount. That or you want to deliberately ignore lifecycle strategies that do exist, though that seems to be looking for trouble.
 
-h3. Lazy Lifecycles
+### Lazy Lifecycles
 
-p. By default PicoContainer will start all startable (or appropriate) components when pico.start() is called. Lazy lifecycle is where the component in question is not started when pico.start() is called, but when the first access to it happens.
+By default PicoContainer will start all startable (or appropriate) components when pico.start() is called. Lazy lifecycle is where the component in question is not started when pico.start() is called, but when the first access to it happens.
 
 It is available for any concept of startable component, but can only happen if you override the the isLazy() method of those classes:
 
-{% highlight java %}
+```java
 pico = new DefaultPicoContainer(new StartableLifecycleStrategy() { 
   @Override 
   public boolean isLazy(ComponentAdapter<?> adapter) { 
@@ -104,14 +104,12 @@ pico.addComponent(Apple.class);
 pico.start(); // start does not get called yet 
 Apple a = pico.getComponent(Apple.class); // start gets called now as part of getComponent(..) 
 pico.stop(); // stop all components that are startable whether lazy or not
-{% endhighlight %}
+```
 
-h3. Custom Lifecycles
+### Custom Lifecycles
 
-p. Write a class that implements LifecycleStrategy, there are just four methods to implement. See LifecycleStrategy.
+Write a class that implements LifecycleStrategy, there are just four methods to implement. See LifecycleStrategy.
 
-h3. Where Next?
+### Where Next?
 
- %(callout)The "Disambiguation":disambiguation.html page outlines strategies for dealing with choosing which of two potential injectables for one component% 
-
-
+<span class="callout">The [Disambiguation](disambiguation.html) page outlines strategies for dealing with choosing which of two potential injectables for one component</span>

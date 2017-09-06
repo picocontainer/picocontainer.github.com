@@ -3,13 +3,13 @@ layout: article
 name: Container Dependency
 ---
 
-h2. Symptoms
+## Symptoms
 
-p. Classes that depend on the container.
+Classes that depend on the container.
 
-p. Consider the following example. We have a class BImpl that requires an A instance. It declares the dependency on the container so it can look up that A:
+Consider the following example. We have a class BImpl that requires an A instance. It declares the dependency on the container so it can look up that A:
 
-{% highlight java %}
+```java
 public interface A { } 
 
 public class AImpl implements A { } 
@@ -21,53 +21,53 @@ public class BImpl implements B {
     /* alternatively: a = (A) pico.getComponent("a"); */ 
   } 
 }
-{% endhighlight %}
-	
-p. The usage would probably look similar to:
+```
 
-{% highlight java %}
+The usage would probably look similar to:
+
+```java
 MutablePicoContainer pico = new DefaultPicoContainer();
 pico.addComponent("a", AImpl.class);
 pico.addComponent("b", BImpl.class);
 pico.addComponent(pico); 
 ... 
 B b = (B) pico.getComponent("b");
-{% endhighlight %}
+```
 
-p. It will work, but it is an anti-pattern.
+It will work, but it is an anti-pattern.
 
-p. The reasons why the above implementation of BImpl is an antipattern are:
+The reasons why the above implementation of BImpl is an antipattern are:
 
-* It introduces an unneeded dependency from BImpl to the container, breaking the core principal of Inversion of Control
-* This makes BImpl harder to unit test
-* B assumes that the container has a registered an A. As a result, B won't fail fast if it has not. Instead, a will reference null, and BImpl will fail later.
+-   It introduces an unneeded dependency from BImpl to the container, breaking the core principal of Inversion of Control
+-   This makes BImpl harder to unit test
+-   B assumes that the container has a registered an A. As a result, B won't fail fast if it has not. Instead, a will reference null, and BImpl will fail later.
 
-h2. Causes
+## Causes
 
-* Missing the historical context of PicoContainer, Dependency Injection and Inversion of Control.
-* Love of 'God class' designs.
+-   Missing the historical context of PicoContainer, Dependency Injection and Inversion of Control.
+-   Love of 'God class' designs.
 
-h2. What to do
+## What to do
 
-p. The simple and elegant solution to this anti-pattern is not to complicate the world more than it is.
+The simple and elegant solution to this anti-pattern is not to complicate the world more than it is.
 
 Here is how it should be:
 
-{% highlight java %}
+```java
 public class BImpl implements B {
   private final A a; BImpl(A a) {
     this.a = a; 
   } 
 }
-{% endhighlight %}
+```
 
-p. PicoContainer will figure out that BImpl needs an A instance, and will pass in the AImpl, as this is an implementation of A.
+PicoContainer will figure out that BImpl needs an A instance, and will pass in the AImpl, as this is an implementation of A.
 
-h2. The One Major Exception
+## The One Major Exception
 
-p. When you go to integrate all your components into a single application, SOMETHING is going to have to wire all these components together. In Pico-land, we call that the"bootstrap"script. (Script, is a loose term, it could easily be a reference to PicoContainer inside a class' main() function.) The pattern of this code will often look like this:
+When you go to integrate all your components into a single application, SOMETHING is going to have to wire all these components together. In Pico-land, we call that the"bootstrap"script. (Script, is a loose term, it could easily be a reference to PicoContainer inside a class' main() function.) The pattern of this code will often look like this:
 
-{% highlight java %}
+```java
 public class Bootstrap {
   private PicoContainer pico = new PicoBuilder().withLifecycle().withCaching().build();
   public static void main(String[] args) { 
@@ -87,8 +87,6 @@ public class Bootstrap {
     pico.dispose(); 
   } 
 }
-{% endhighlight %}
+```
 
-p. PicoContainer has a sample project called"bootstrap"that does just this sort of thing. For web applications, Pico uses a WebappContextListener to bootstrap an application-level container, and a Servlet filter to bootstrap a request-level container.
-
-
+PicoContainer has a sample project called"bootstrap"that does just this sort of thing. For web applications, Pico uses a WebappContextListener to bootstrap an application-level container, and a Servlet filter to bootstrap a request-level container.

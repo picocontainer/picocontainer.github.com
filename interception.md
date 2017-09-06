@@ -3,26 +3,23 @@ layout: article
 name: AOP Style Interception
 ---
 
-p. PicoContainer has a rudimentary Aspect Orientated Programing (AOP) capability with its 'Interception' behavior. With respect to the methods of a component, both before and after invocation, control can be handed to an interceptor. You can intercept a method call:
+PicoContainer has a rudimentary Aspect Orientated Programing (AOP) capability with its 'Interception' behavior. With respect to the methods of a component, both before and after invocation, control can be handed to an interceptor. You can intercept a method call:
 
-* before it is invoked (and optionally veto its invocation, with an alternate return value).
-* after it is invoked (and optionally override the return value).
+-   before it is invoked (and optionally veto its invocation, with an alternate return value).
+-   after it is invoked (and optionally override the return value).
 
-p. There are some limitations:
+There are some limitations:
 
-* it will only work for interface/impl separated components
-* it needs a class that implements the interface in question* all of the methods need null implementations, even if not intended to be intercepted
+-   it will only work for interface/impl separated components
+-   it needs a class that implements the interface in question\* all of the methods need null implementations, even if not intended to be intercepted
+-   will (likely) break if there's deep recursion into Intercepted instances
+-   you can't intercept an implementation's static methods
+-   it is not possible to modify a method's arguments
+-   the constructor's invocation for the component is not interceptable
+-   the component's fields are not interceptable
+-   only one component invoking the methods on another component will be intercepted.\* components and related classes calling their own methods will not be intercepted
 
-
-
-* will (likely) break if there's deep recursion into Intercepted instances
-* you can't intercept an implementation's static methods
-* it is not possible to modify a method's arguments
-* the constructor's invocation for the component is not interceptable
-* the component's fields are not interceptable
-* only one component invoking the methods on another component will be intercepted.* components and related classes calling their own methods will not be intercepted
-
-{% highlight java %}
+```java
 public static class BiteReporter implements Apple {
   private Intercepted.Controller controller;
   public BiteReporter(Intercepted.Controller controller) {
@@ -47,23 +44,23 @@ pico = new PicoBuilder.withInterception().build();
 pico.addComponent(Apple.class, BraeburnApple.class); // etc
 pico = new PicoBuilder.withBehaviors(interception()).build();
 pico.addComponent(Apple.class, BraeburnApple.class); // etc
-{% endhighlight %}
+```
 
-p.  *Fine grained participation in interception* 
+**Fine grained participation in interception**
 Assuming you're passing in the Interceptor to the classes you're using for interception of a component, you can participate in the fate of the method call. For a 'pre' invocation, you can veto the calling of the 'real' method.
 
-{% highlight java %}
+```java
 public boolean takeBite(int grams) { 
   if (grams>50) { 
     controller.veto(); 
   } 
   return false; // will be passed back to the caller. 
 }
-{% endhighlight %}
+```
 
-p. For a 'post' invocation, you can override the return value of the 'real' method.
+For a 'post' invocation, you can override the return value of the 'real' method.
 
-{% highlight java %}
+```java
 public boolean takeBite(int grams) { 
   if (grams>50) { 
     controller.override(); 
@@ -72,11 +69,11 @@ public boolean takeBite(int grams) {
   } 
   return false; // will be passed back to the caller. 
 }
-{% endhighlight %}
+```
 
-p. Also for a 'post' invocation, you can access the return value of the 'real' method.
+Also for a 'post' invocation, you can access the return value of the 'real' method.
 
-{% highlight java %}
+```java
 public boolean takeBite(int grams) { 
   boolean rv = (boolean) controller.getOriginalRetVal(); 
   if (rv == false) { 
@@ -84,4 +81,4 @@ public boolean takeBite(int grams) {
   } 
   return true; // ignored as no 'override' 
 }
-{% endhighlight %}
+```

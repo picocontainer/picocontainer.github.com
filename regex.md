@@ -3,20 +3,20 @@ layout: article
 name: Regex Composer
 ---
 
-p. A RegexComposer is a "composer":monitors.html#composers allows for regular expressions to be used in conjunction with making lists of components that match that regular expression.
+A RegexComposer is a [composer](monitors.html#composers) allows for regular expressions to be used in conjunction with making lists of components that match that regular expression.
 
-{% highlight java %}
+```java
 MutablePicoContainer pico = new DefaultPicoContainer(new ComposingMonitor(new RegexComposer()));
 pico.addComponent("apple1", "Braeburn");
 pico.addComponent("apple2", "Granny Smith");
 pico.addComponent("plum", "Victoria"); 
 List apples = (List) pico.getComponent("apple[1-9]"); 
 assertEquals("[Braeburn, Granny Smith]", apples.toString());
-{% endhighlight %}
+```
 
-p. The above example is fed the regular expression in the getComponent(..) invocation, which may be in practical. Here is one where the parameter names of the injectee are used for correlation purposes
+The above example is fed the regular expression in the getComponent(..) invocation, which may be in practical. Here is one where the parameter names of the injectee are used for correlation purposes
 
-{% highlight java %}
+```java
 public static class NeedsApples {
   private List<String> apples;
   public NeedsApples(List<String> apples) { 
@@ -39,4 +39,4 @@ pico.as(USE_NAMES).addComponent(NeedsApples.class)
     .as(USE_NAMES).addComponent(NeedsPlums.class); 
 assertEquals("[Braeburn, Granny Smith]", pico.getComponent(NeedsApples.class).apples.toString()); 
 assertEquals("[Victoria]", pico.getComponent(NeedsPlums.class).plums.toString());
-{% endhighlight %}
+```

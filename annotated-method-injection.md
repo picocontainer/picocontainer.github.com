@@ -3,11 +3,11 @@ layout: article
 name: Annotated Method Injection
 ---
 
-h3. Overview
+### Overview
 
-p. This is where a component has an empty constructor and gets its dependencies injected into annotated methods after instantiation:
+This is where a component has an empty constructor and gets its dependencies injected into annotated methods after instantiation:
 
-{% highlight java %}
+```java
 public class Apple {
   private Orange orange;
   private Pear pear;
@@ -26,29 +26,28 @@ public class Apple {
   } 
   // other methods 
 }
-{% endhighlight %}
+```
 
-h3. Usage
+### Usage
 
-{% highlight java %}
+```java
 pico = new DefaultPicoContainer(new AnnotatedMethodInjection();
 pico.addComponent(Apple.class); 
 // etc 
 Apple apple = pico.getComponent(Apple.class);
-{% endhighlight %}
+```
 
-p. With an custom annotation instead of PicoContainer's @Inject
+With an custom annotation instead of PicoContainer's @Inject
 
-{% highlight java %}
+```java
 pico = new DefaultPicoContainer(new AnnotatedMethodInjection(MyInjectAnnotaton.class);
 pico.addComponent(Apple.class); 
 // etc 
 Apple apple = pico.getComponent(Apple.class);
-{% endhighlight %}
+```
 
-p. The method (whatever its name) needs an @Inject annotation. That is from our codebase (org.picocontainer.Inject).
+The method (whatever its name) needs an @Inject annotation. That is from our codebase (org.picocontainer.Inject).
 
-p. The component factory for this is *AnnotatedMethodInjection* . It only handles method-annotation injection types of components.
+The component factory for this is **AnnotatedMethodInjection** . It only handles method-annotation injection types of components.
 
-p. Additionally the default component factory *AdaptiveInjection* can also handle method-annotation injection types, if the @Inject annotation from PicoContainer's code-base is used as the marker for injection. AdaptiveInjection will also fall through to constructor injection if there is no recognized annotation.
-
+Additionally the default component factory **AdaptiveInjection** can also handle method-annotation injection types, if the @Inject annotation from PicoContainer's code-base is used as the marker for injection. AdaptiveInjection will also fall through to constructor injection if there is no recognized annotation.

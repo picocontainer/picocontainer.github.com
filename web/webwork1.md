@@ -3,11 +3,11 @@ layout: article
 name: WebWork1
 ---
 
-p. WebWork 1 is a little old now for a web technology. It has been superseded by WebWork 2 and Struts 2. In its day though, it was the pioneer of decent action frameworks for Java.
+WebWork 1 is a little old now for a web technology. It has been superseded by WebWork 2 and Struts 2. In its day though, it was the pioneer of decent action frameworks for Java.
 
-p. To configure PicoContainer to handle the dependency injection of WebWork1 actions, refer to the web.xml below. For WebWork1 there is a slightly different listener to the one defined in the "main page":index.html. Also, instead of using WebWork1's servlet, use ours. Everything else from the standard WebWork1 setup is appropriate.
+To configure PicoContainer to handle the dependency injection of WebWork1 actions, refer to the web.xml below. For WebWork1 there is a slightly different listener to the one defined in the [main page](index.html). Also, instead of using WebWork1's servlet, use ours. Everything else from the standard WebWork1 setup is appropriate.
 
-{% highlight xml %}
+```xml
 <web-app>  
   <display-name>PicoContainer-Web WebWork 1 Demo</display-name>  
   
@@ -56,14 +56,13 @@ p. To configure PicoContainer to handle the dependency injection of WebWork1 act
   </welcome-file-list>  
   
 </web-app> 
-{% endhighlight %}
- 
+```
 
-p. With this design you can use Constructor Injection and three tier container scoping for WebWork1 web applications. Make sure you make and configure your own "WebappComposer":composition.html implementation.
+With this design you can use Constructor Injection and three tier container scoping for WebWork1 web applications. Make sure you make and configure your own [WebappComposer](composition.html) implementation.
 
-p. See "downloads":downloads.html on how to download the webwork module either using Maven or by downloading full distribution.
-We have a sample application. It is a small form-style web-app that shows and list of cheeses, allows you to add and delete from the list. "See the Maven2 source":http://svn.codehaus.org/picocontainer/java/2.x/trunk/web/examples/webwork-webapp/ for it. Here is a screenshot of it running:
+See [downloads](downloads.html) on how to download the webwork module either using Maven or by downloading full distribution.
+We have a sample application. It is a small form-style web-app that shows and list of cheeses, allows you to add and delete from the list. [See the Maven2 source](http://svn.codehaus.org/picocontainer/java/2.x/trunk/web/examples/webwork-webapp/) for it. Here is a screenshot of it running:
 
-!images/WebWork1_App.jpg(WebWork1 webapp)!
+![WebWork1 webapp](images/WebWork1_App.jpg "WebWork1 webapp")
 
-p. "Download":warfiles/pico-webwork1-demo.war the war file for it (full Java source in WEB-INF/classes).
+[Download](warfiles/pico-webwork1-demo.war) the war file for it (full Java source in WEB-INF/classes).
