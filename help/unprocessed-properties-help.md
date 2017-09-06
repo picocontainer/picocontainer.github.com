@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
 
 layout: article
-name: Unprocessed Properties
+title: Unprocessed Properties
 ---
 
 Properties are a powerful mechanism to add hints at registration time as to what the behavior of a component should be. It only works though when the right component factories are set for the container. Ones that recognize the property and can process it. For example, DefaultPicoConstructor's default constructor sets up an adaptive ComponentFactory that can handle HIDE\_IMPL:

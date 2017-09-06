@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Introduction
+title: Introduction
 ---
 
 Authors: Aslak Hellesoy, Jon Tirsen

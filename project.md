@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Project
+title: Project
 ---
 
 ## PicoContainer is hosted at GitHub

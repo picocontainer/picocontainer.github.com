@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Hiding Implementations
+title: Hiding Implementations
 ---
 
 ## Hiding and Swapping of Implementations

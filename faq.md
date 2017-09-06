@@ -1,6 +1,6 @@
 ---
 layout: article
-name: FAQs
+title: FAQs
 ---
 
 ## Why PicoContainer 2.0?

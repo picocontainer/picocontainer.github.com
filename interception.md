@@ -1,6 +1,6 @@
 ---
 layout: article
-name: AOP Style Interception
+title: AOP Style Interception
 ---
 
 PicoContainer has a rudimentary Aspect Orientated Programing (AOP) capability with its 'Interception' behavior. With respect to the methods of a component, both before and after invocation, control can be handed to an interceptor. You can intercept a method call:

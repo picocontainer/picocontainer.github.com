@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Constructor Injection
+title: Constructor Injection
 ---
 
 Overview

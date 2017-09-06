@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Component Configuration
+title: Component Configuration
 ---
 
 Choices

@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Thread Safety Behaviors
+title: Thread Safety Behaviors
 ---
 
 ## Thread Safety

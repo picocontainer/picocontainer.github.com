@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Monitoring Component Events
+title: Monitoring Component Events
 ---
 
 A ComponentMonitor if injected into DefultPicoContainer allows for certain events to be monitored for the whole container. These are:

@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Annotated Field Injection
+title: Annotated Field Injection
 ---
 
 ### Injecting into Annotated Fields

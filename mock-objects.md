@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Mock Objects
+title: Mock Objects
 ---
 
 If you have had it with codebases that drag along everything and the kitchen sink, (possibly using the [Singleton](antipatterns/singleton-antipattern.html) ) you must read this page. Classes that look up or instantiate heavyweight classes themselves are such beasts. As you might have experienced, they are a pain to test. (And ample proof that the authors didn't follow TDD ![](/images/thumbs_down.gif) ). Dependency Injection with PicoContainer and Mock Objects to the rescue!

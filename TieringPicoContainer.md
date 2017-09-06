@@ -1,6 +1,6 @@
 ---
 layout: article
-name: TieringPicoContainer
+title: TieringPicoContainer
 ---
 
 TieringPicoContainer is the same as DefaultPicoContainer, except that child containers can only seek to locate unsatisfied injection dependencies for their immediate parent container. Their grandparents are out of bounds for dependency resolution. Example:

@@ -1,6 +1,6 @@
 ---
 layout: article
-name: SystemPropertiesPicoContainer
+title: SystemPropertiesPicoContainer
 ---
 
 SystemPropertiesPicoContainer is a special type of PicoContainer that is populated from the [System Properties](http://www.mindspring.com/~mgrand/java-system-properties.htm) passed into the Java application when it started.

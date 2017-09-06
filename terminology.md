@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Terminology
+title: Terminology
 ---
 
 Also known as Picosaurus

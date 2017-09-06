@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Transparency
+title: Transparency
 ---
 
 Transparency, for PicoContainer, means that components do not have to implement any interface or abstraction in order to be components. Moreover, components do not have to adhere to any naming conventions or bundle any meta-data in order to qualify as components.

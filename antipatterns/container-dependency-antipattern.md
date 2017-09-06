@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Container Dependency
+title: Container Dependency
 ---
 
 ## Symptoms

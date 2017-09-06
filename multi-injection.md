@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Multiple Injection
+title: Multiple Injection
 ---
 
 ## Overview

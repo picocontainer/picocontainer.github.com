@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Disambiguation
+title: Disambiguation
 ---
 
 ## What is Disambiguation?

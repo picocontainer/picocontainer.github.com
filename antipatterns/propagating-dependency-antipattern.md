@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Propagating Dependency
+title: Propagating Dependency
 ---
 
 Symptoms

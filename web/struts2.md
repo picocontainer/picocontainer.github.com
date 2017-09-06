@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Struts2
+title: Struts2
 ---
 
 To configure PicoContainer to handle the dependency injection of Struts2 actions, refer to the web.xml below. For a start there is a slightly different listener to the one defined in the main page. Also, instead of using Struts2's servlet, use ours. Everything else from the standard Struts2 setup is appropriate.

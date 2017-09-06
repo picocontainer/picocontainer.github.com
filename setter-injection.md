@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Setter Injection
+title: Setter Injection
 ---
 
 ## Overview

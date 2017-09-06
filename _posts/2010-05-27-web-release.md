@@ -1,6 +1,6 @@
 ---
 layout: post
-name: PicoContainer Web 2.5
+title: PicoContainer Web 2.5
 bullets: PicoContainer & Web Frameworks
 desc: Version 2.5 of the bindings for popular web frameworks and Pico Web Remoting
 image: web_release

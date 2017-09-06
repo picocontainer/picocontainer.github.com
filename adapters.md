@@ -1,7 +1,7 @@
 ---
 
 layout: article
-name: Component Adapters
+title: Component Adapters
 ---
 
 ### What Are [ComponentAdapters](/javadoc/core/org/picocontainer/ComponentAdapter.html) and why are they useful?

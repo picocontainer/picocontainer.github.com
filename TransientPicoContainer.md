@@ -1,6 +1,6 @@
 ---
 layout: article
-name: TransientPicoContainer
+title: TransientPicoContainer
 ---
 
 TransientPicoContainer is a for short term needs for object instantiation, where the container is going to be de-referenced shortly after use.

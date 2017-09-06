@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Leveraging Parameter Names
+title: Leveraging Parameter Names
 ---
 
 This is where the type alone is not enough to indicate which dependency should be put one or more constructor args. The following component has a need for two of the same type, with some subtly different characteristics.

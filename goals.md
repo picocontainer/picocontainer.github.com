@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Project Goals
+title: Project Goals
 ---
 
 PicoContainer's core was designed with some goals in mind:

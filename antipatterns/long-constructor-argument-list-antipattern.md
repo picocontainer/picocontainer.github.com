@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Long Constructor Argument List
+title: Long Constructor Argument List
 ---
 
 Symptoms

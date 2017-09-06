@@ -4,13 +4,11 @@ address, caption, cite, code, dfn, em, strong, th, var {font-style:normal; font-
 h1, h2, h3, h5, h5, h6  {font-size:100%}
 table                   {border-collapse:collapse; border-spacing:0}
 fieldset, img           {border:0}
-ol, ul, li              {list-style:none}
 caption, th             {text-align:left}
 q:before, q:after       {content:''}
 strong                  {font-weight: bold}
 em                      {font-style: italic}
-ol, ul, li              {list-style:none}
-* a                     {position:relative} 
+* a                     {position:relative}
 a                       {outline:none}        
 a img                   {border:none}     
 

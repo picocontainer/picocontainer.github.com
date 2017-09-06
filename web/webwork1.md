@@ -1,6 +1,6 @@
 ---
 layout: article
-name: WebWork1
+title: WebWork1
 ---
 
 WebWork 1 is a little old now for a web technology. It has been superseded by WebWork 2 and Struts 2. In its day though, it was the pioneer of decent action frameworks for Java.

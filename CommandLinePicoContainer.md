@@ -1,6 +1,6 @@
 ---
 layout: article
-name: CommandLinePicoContainer
+title: CommandLinePicoContainer
 ---
 
 CommandLineArgumentsPicoContainer is a special type of PicoContainer that processes the arguments passed into from the command line, and sets them up as configuration for other components.

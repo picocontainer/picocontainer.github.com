@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Arrays, Collections and Maps
+title: Arrays, Collections and Maps
 ---
 
 Authors: Aslak Hellesøy and Jörg Schaible

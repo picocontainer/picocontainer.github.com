@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Ambiguous Injectable
+title: Ambiguous Injectable
 ---
 
 p. PicoContainer tries to determine what to inject into the constructor of each component as it instantiates (or setters/fields for other injection types). Sometimes there can be two or more classes that could equally satisfy a constructor:

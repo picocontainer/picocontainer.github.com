@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Inversion of Control
+title: Inversion of Control
 ---
 
 ## Overview

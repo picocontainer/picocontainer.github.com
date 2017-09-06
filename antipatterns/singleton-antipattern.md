@@ -1,6 +1,6 @@
 ----
 layout: article
-name: Singleton
+title: Singleton
 ---
 
 The singleton pattern was described in the GoF [Design Patterns](http://en.wikipedia.org/wiki/Design_Patterns) book. Because of its static nature and global availability, it allows component writers to obscurely reference other components. Overuse makes for bad solutions. Overuse at the enterprise level, it makes for very bad solutions.

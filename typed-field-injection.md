@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Typed Field Injection
+title: Typed Field Injection
 ---
 
 ### Overview

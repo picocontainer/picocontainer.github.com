@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Fluent Style
+title: Fluent Style
 ---
 
 PicoContainer allows for a very fluent style of use. Refer to Martin's ['Fluent Interface'](http://www.martinfowler.com/bliki/FluentInterface.html) article.

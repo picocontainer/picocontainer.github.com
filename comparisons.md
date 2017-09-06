@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
 
 layout: article
-name: Container Comparisons
+title: Container Comparisons
 ---
 
 ## Overview

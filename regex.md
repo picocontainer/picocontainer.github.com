@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Regex Composer
+title: Regex Composer
 ---
 
 A RegexComposer is a [composer](monitors.html#composers) allows for regular expressions to be used in conjunction with making lists of components that match that regular expression.

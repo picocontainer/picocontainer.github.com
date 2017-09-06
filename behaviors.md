@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Behaviors Overview
+title: Behaviors Overview
 ---
 
 PicoContainer can add behaviors to components automatically during instantiation.

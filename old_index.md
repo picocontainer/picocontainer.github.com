@@ -1,6 +1,6 @@
 ---
 layout: article
-name: What is PicoContainer?
+title: What is PicoContainer?
 ---
 
 PicoContainer is a highly embeddable, full-service, Inversion of Control (IoC) container for components honor the Dependency Injection pattern. The project started in 2003 and pioneered Constructor Injection auto-wiring. It is also Open Source and therefore free to use. The license is [BSD](http://www.opensource.org/licenses/bsd-license.php) and thus you can safely use this with commercial or other open source software.

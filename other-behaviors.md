@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Other Behaviors
+title: Other Behaviors
 ---
 
 ## Property Applying

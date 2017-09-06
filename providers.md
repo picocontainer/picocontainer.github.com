@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Injection via Providers
+title: Injection via Providers
 ---
 
 A Provider class is a class with a method named provide that can participate in injection

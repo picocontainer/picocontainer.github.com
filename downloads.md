@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Downloads
+title: Downloads
 ---
 
 ## Released Binary and Source Jars (1.x and 2.x)

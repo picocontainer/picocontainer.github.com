@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Component Properties
+title: Component Properties
 ---
 
 DefaultPicoContainer allows for some properties to be set per component at the time each is added. A convenience class called Characteristics lists the supplied properties.

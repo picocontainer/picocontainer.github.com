@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Javadoc
+title: Javadoc
 ---
 
 ## PicoContainer Core

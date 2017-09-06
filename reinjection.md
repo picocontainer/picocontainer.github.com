@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Reinjection
+title: Reinjection
 ---
 
 Reinjection is where an existing instance, that may have been already created by PicoContainer, can have a method called to inject more dependancies.

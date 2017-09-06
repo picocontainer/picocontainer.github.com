@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Scoped Containers
+title: Scoped Containers
 ---
 
 PicoContainer's scope hinges on parent/child container relationships. From a PicoContainer instance you can make a child container via makeChildContainer() or addChildContainer(..).

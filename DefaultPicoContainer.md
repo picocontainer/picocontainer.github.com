@@ -1,6 +1,6 @@
 ---
 layout: article
-name: DefaultPicoContainer
+title: DefaultPicoContainer
 ---
 
 DefaultPicoContainer is the main workhorse container.

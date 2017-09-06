@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
 
 layout: article
-name: Class Naming
+title: Class Naming
 ---
 
 PicoContainer's class naming changed substantially between 1.0 and 2.0. There are two major influences for this:

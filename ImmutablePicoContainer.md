@@ -1,6 +1,6 @@
 ---
 layout: article
-name: TransientPicoContainer
+title: TransientPicoContainer
 ---
 
 ImmutablePicoContainer is wrapper mechanisms for a MutablePicoContainer. The resulting reference is not able to accept mutating method invocations by any means.

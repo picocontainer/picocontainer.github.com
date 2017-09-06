@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Annotated Method Injection
+title: Annotated Method Injection
 ---
 
 ### Overview

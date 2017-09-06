@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Component Lifecycle
+title: Component Lifecycle
 ---
 
 Inversion of Control is three things: component dependencies and configuration, but also Component Lifecycle.

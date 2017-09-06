@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Composite Injection
+title: Composite Injection
 ---
 
 ### Overview

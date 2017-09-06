@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Method Injection
+title: Method Injection
 ---
 
 ### Overview

@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Team
+title: Team
 ---
 
 A project like PicoContainer is always made possible by the effort of a lot of people. Read about the developers and the contributers' names below. All of them have worked together to make PicoContainer the most respected IoC framework.

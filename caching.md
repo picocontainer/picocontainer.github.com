@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
 
 layout: article
-name: Caching and Singletons
+title: Caching and Singletons
 ---
 
 This is generally where a component has a single instance in the container that is returned to the called of getComponent(..) rather than a new instance being created each time the container is asked. Note that this is very different to the Singleton as defined by the Gang-of-Four book 'Design Patterns' where a class has a static getInstance() method and a private static instance variable.

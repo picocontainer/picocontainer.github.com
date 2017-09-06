@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Dependency Injection
+title: Dependency Injection
 ---
 
 See Martin Fowlers's [Inversion of Control Containers and the Dependency Injection patten](http://www.martinfowler.com/articles/injection.html) article from 2003 for a thorough description. Surely everyone has read this by now?

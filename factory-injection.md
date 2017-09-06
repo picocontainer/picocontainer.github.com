@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Factory Injection
+title: Factory Injection
 ---
 
 ## Overview

@@ -1,6 +1,6 @@
 ---
 layout: article
-name: Inversion of Control History
+title: Inversion of Control History
 ---
 
 p. Here is some of the history of the pattern or principle known as Inversion of Control (IoC). There is some confusion online as to whether IoC has been renamed Dependency Injection (DI). This is not the case, DI concerns just one aspect of IoC - component assembly. The other two are configuration and lifecycle.
