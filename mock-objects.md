@@ -11,7 +11,7 @@ This illustration shows how:
 
 |Unit-Test Time||Deployment Time||
 | ![](/images/mock-needs-stuff.png) || ![](/images/pico-needs-stuff.png) ||
-h3. The class
+### The class
 
 Here is what NeedsStuff might look like:
 

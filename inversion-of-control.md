@@ -172,7 +172,7 @@ Examples: EJB 2.x that leverages JNDI, Servlets that leverage JNDI
 -   Contextualized Dependency Lookup - AKA Push approach
 
 Examples: Servlets that leverage ServletContext, Apache's Avalon, OSGi, Keel, Loom (they use Avalon)
-p. See also [Constructor Injection](constructor-injection.html) , [Setter Injection](setter-injection.html) for more information.
+See also [Constructor Injection](constructor-injection.html) , [Setter Injection](setter-injection.html) for more information.
 
 Note Field Injection was categorised but there was was really no interest it until the EJB3.0 specification rolled out. Getter Injection flourished for a while, but did not take and was never supported by the PicoContainer team.
 

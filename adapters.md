@@ -92,12 +92,12 @@ Example 1: Caching Behaviors
 
 ```java
 pico = new PicoBuilder().withCaching().build();
-p. Example 2: Caching + ImplementationHiding (same imports)
+Example 2: Caching + ImplementationHiding (same imports)
 
 pico = new PicoBuilder().withCaching().withHiddenImplementations().build();
 ```
 
-p. In both of these Examples, ConstructorInjection is automatically used by default.
+In both of these Examples, ConstructorInjection is automatically used by default.
 
 Example 3: Setter Injection
 
@@ -126,7 +126,7 @@ Example 3: Setter Injection
 pico = new DefaultPicoContainer(new SetterInjection());
 ```
 
-h3. Changing the default ComponentAdapter when registering objects.
+### Changing the default ComponentAdapter when registering objects.
 
 When you modify behaviors, you are, in essence, swapping the default ComponentFactory being used for further registrations. More details about this have been discussed in the section " [Modifying Behaviors](behaviors.html) "
 

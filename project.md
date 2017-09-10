@@ -7,9 +7,9 @@ title: Project
 
 ## Project links
 
-Jira "Bug tracking":http://jira.codehaus.org/browse/PICO/ 
+Jira [Bug tracking](http://jira.codehaus.org/browse/PICO/) 
 
-Old "Confluence based documentation":http://docs.codehaus.org/display/PICO/ (for Pico 1.x)
+Old [Confluence based documentation](http://docs.codehaus.org/display/PICO/) (for Pico 1.x)
 
 Source control root for Pico 2.x (you will need Maven2 installed to build):
 
@@ -26,30 +26,32 @@ Php - http://svn.codehaus.org/picocontainer/php/
 
 Maven repositories for artifact download :
 
-Numbered releases : "https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/":https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/ 
+Numbered releases : [https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/](https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/)
 
-Snapshot (work in progress) releases "http://snapshots.repository.codehaus.org/org/picocontainer/":http://snapshots.repository.codehaus.org/org/picocontainer/ 
+Snapshot (work in progress) releases [http://snapshots.repository.codehaus.org/org/picocontainer/](http://snapshots.repository.codehaus.org/org/picocontainer/)
 
 ### Developer's Note
 
-If you wish to work with the Pico Sources, somtimes the 3rd party library Paranamer is updated before it gets synced to the maven central repository. You can get past frustrating compile error during those few days beteween update and sync by adding the following code to your maven's settings.xml file.
+If you wish to work with the Pico Sources, sometimes the 3rd party library Paranamer is updated before it gets synced to the maven central repository. You can get past frustrating compile error during those few days between update and sync by adding the following code to your maven's settings.xml file.
 
+```xml
 <profiles>
-<profile>
-<id>pico</id>
-<activation>
-<activeByDefault>true</activeByDefault>
-</activation>
-<repositories>
-<repository>
-<id>codehaus</id>
-<snapshots><enabled>false</enabled></snapshots>
-<releases><enabled>true</enabled></releases>
-<url>https://nexus.codehaus.org/content/repositories/releases/</url>
-</repository>
-</repositories>
-</profile>
+    <profile>
+        <id>pico</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <repositories>
+            <repository>
+                <id>codehaus</id>
+                <snapshots><enabled>false</enabled></snapshots>
+                <releases><enabled>true</enabled></releases>
+                <url>https://nexus.codehaus.org/content/repositories/releases/</url>
+            </repository>
+        </repositories>
+    </profile>
 </profiles>
+```
 
 ## License
 
