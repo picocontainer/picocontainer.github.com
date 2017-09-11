@@ -18,7 +18,7 @@ title: home page
 {% for post in site.posts reversed limit:2 %}
     {% cycle '<li>', '<li class="right">' %}
     <a href="{{ post.url }}" title="More on {{ post.name }} {{ post.period }}">
-       <span class="header">{{ post.name }}</span>
+       <span class="header">{{ post.title }}</span>
        <em>{{ post.bullets | downcase }}</em>
        <img src="/images/{{post.image}}_home.png" alt="Project screenshot" />
        <center><span class="desc">{{ post.date | date: "%d %B %Y" }}</span></center>

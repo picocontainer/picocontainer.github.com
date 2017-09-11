@@ -26,7 +26,7 @@ Php - http://svn.codehaus.org/picocontainer/php/
 
 Maven repositories for artifact download :
 
-Numbered releases : [https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/](https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/)
+Numbered releases : [http://central.maven.org/maven2/org/picocontainer/](http://central.maven.org/maven2/org/picocontainer/)
 
 Snapshot (work in progress) releases [http://snapshots.repository.codehaus.org/org/picocontainer/](http://snapshots.repository.codehaus.org/org/picocontainer/)
 
@@ -46,7 +46,7 @@ If you wish to work with the Pico Sources, sometimes the 3rd party library Paran
                 <id>codehaus</id>
                 <snapshots><enabled>false</enabled></snapshots>
                 <releases><enabled>true</enabled></releases>
-                <url>https://nexus.codehaus.org/content/repositories/releases/</url>
+                <url>http://central.maven.org/maven2/</url>
             </repository>
         </repositories>
     </profile>

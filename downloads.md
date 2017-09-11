@@ -5,11 +5,11 @@ title: Downloads
 
 ## Released Binary and Source Jars (1.x and 2.x)
 
-Core: <https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer/>
+Core: <http://central.maven.org/maven2/org/picocontainer/picocontainer/>
 
-Gems: <https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer-gems/>
+Gems: <http://central.maven.org/maven2/org/picocontainer/picocontainer-gems/>
 
-Distribution: <https://nexus.codehaus.org/content/repositories/releases/org/picocontainer/picocontainer-distribution/>
+Distribution: <http://central.maven.org/maven2/org/picocontainer/picocontainer-distribution/>
 
 ## Snapshot Binary and Source Jars
 

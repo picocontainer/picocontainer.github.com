@@ -33,7 +33,7 @@ pico.as(USE_NAMES).addComponent(Pie.class); // needs Apple, specifically a Grann
 Pie pie = pico.getComponent(Pie.class); // OK this time.
 ``` 
  
-To use names Parameters, you are going to need Paranamer 1.0 (or above) in the classpath, as well as ASM 3.0 (or above). If you are expecting Pico to work based on parameter names, but its not doing so, it is most likely that you do not have paranamer-1.0.jar in the classpath. See [https://nexus.codehaus.org/content/repositories/releases/com/thoughtworks/paranamer/paranamer/](https://nexus.codehaus.org/content/repositories/releases/com/thoughtworks/paranamer/paranamer/) for versions of paranamer. Also [http://maven.objectweb.org/maven2/asm/asm/](http://maven.objectweb.org/maven2/asm/asm/) for the ASM jar.
+To use names Parameters, you are going to need Paranamer 1.0 (or above) in the classpath, as well as ASM 3.0 (or above). If you are expecting Pico to work based on parameter names, but its not doing so, it is most likely that you do not have paranamer-1.0.jar in the classpath. See [http://central.maven.org/maven2/com/thoughtworks/paranamer/paranamer/](http://central.maven.org/maven2/com/thoughtworks/paranamer/paranamer/) for versions of paranamer. Also [http://maven.objectweb.org/maven2/asm/asm/](http://maven.objectweb.org/maven2/asm/asm/) for the ASM jar.
 
 You also have to make a decision as to when parameter name data is made. There are two choices for this:
 
