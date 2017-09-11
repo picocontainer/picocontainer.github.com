@@ -44,6 +44,10 @@ ul li {
 	padding: 4px;
 }
 	
+p {
+	padding: 0.3em;
+}
+
 ul li a {
 	padding: 0px 4px; 
 	display: block;

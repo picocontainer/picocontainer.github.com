@@ -54,7 +54,7 @@ h1, #footer_box {margin-top: 15px; margin-bottom: 10px;}
 h2 {margin-top: 10px; margin-bottom: 7px;}
 h3 {margin-top: 7px; margin-bottom: 3px;}
 em              {margin-bottom: 5px;}
-p               {padding: 3px 0px 3px 0;}
+p               {padding: 8px 0 4px 0;}
 
 #footer_box     {width: 100%; clear: both;} 
 .header,   {display: block;}
